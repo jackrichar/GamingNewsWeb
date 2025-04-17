@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "image": "https://via.placeholder.com/800x400.png?text=Slide+1",
+    "title": "اسلاید اول",
+    "description": "این اسلاید اول منه، خیلی باحاله!"
+  },
+  {
+    "id": 2,
+    "image": "https://via.placeholder.com/800x400.png?text=Slide+2",
+    "title": "اسلاید دوم",
+    "description": "اینم اسلاید دوم، حتی باحال‌تره!"
+  },
+  {
+    "id": 3,
+    "image": "https://via.placeholder.com/800x400.png?text=Slide+3",
+    "title": "اسلاید سوم",
+    "description": "آخرین اسلاید، امیدوارم خوشت بیاد!"
+  }
+]
