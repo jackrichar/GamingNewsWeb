@@ -1,8 +1,9 @@
 import React from "react";
 import "./NavigationStyle.scss";
 
-// Import SearchBox Component
+// Import Component
 import Searchbox from "../searchBox/Searchbox";
+import Profile from "./Profile/Profile";
 
 // Import PNG Image
 import logo from "../../Assets/image/Logo.png";
@@ -32,7 +33,7 @@ function Navigation() {
               <AboutUsIcon className="HomePageSvgIcon"/>
             </div>
           </div>
-          <div className="profile">profile</div>
+          <Profile/>
         </div>
       </div>
     </>
