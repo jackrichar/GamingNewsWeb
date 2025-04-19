@@ -1,33 +1,42 @@
 import React from "react";
-import style from "./Navigation.module.scss";
+import "./NavigationStyle.scss";
+
+// Import SearchBox Component
 import Searchbox from "../searchBox/Searchbox";
+
+// Import PNG Image
 import logo from "../../Assets/image/Logo.png";
 
-function Navigatin() {
+//Import SVG Icon
+import {ReactComponent as HomeIcon} from "../../Assets/Icon/Home.svg";
+import {ReactComponent as AllGamesIcon} from "../../Assets/Icon/AllGames.svg";
+import {ReactComponent as FavouriteIcon} from "../../Assets/Icon/Favourite.svg";
+import {ReactComponent as AboutUsIcon} from "../../Assets/Icon/AboutUs.svg";
+
+function Navigation() {
   return (
     <>
-      <div className={style.container}>
-        <div className={style.container_items}>
-          <div className={style.container_logo_search}>
-            <div className={style.container_logo}>
+      <div className="container">
+        <div className="items">
+          <div className="logo_search">
+            <div className="logo">
               <img style={{ width: 52, height: 38 }} src={logo} alt="logo" />
             </div>
-            <div className={style.container_searchBox}>
-              <Searchbox />
-            </div>
 
-            <div className={style.container_navigation_menu}>
-              <a>home</a>
-              <a>home</a>
-              <a>home</a>
-              <a>home</a>
+            <Searchbox />
+
+            <div className="navigationMenu">
+              <HomeIcon className="HomePageSvgIcon"/>
+              <AllGamesIcon className="HomePageSvgIcon"/>
+              <FavouriteIcon className="HomePageSvgIcon"/>
+              <AboutUsIcon className="HomePageSvgIcon"/>
             </div>
           </div>
-          <div className={style.container_profile}>profile</div>
+          <div className="profile">profile</div>
         </div>
       </div>
     </>
   );
 }
 
-export default Navigatin;
+export default Navigation;

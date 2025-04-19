@@ -1,0 +1,46 @@
+.container {
+  width: 100%;
+  height: 70px;
+  background-color: #1a1528;
+  .items {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+
+    .logo_search {
+      display: flex;
+      align-items: center;
+      height: 100%;
+
+      .logo {
+        color: red;
+        width: 52px;
+        height: 38px;
+      }
+    }
+  }
+
+  .navigationMenu {
+    display: flex;
+    width: 505px;
+    justify-content: space-between;
+    align-items: center;
+
+    .HomePageSvgIcon{
+      width: 30px;
+      height: 30px;
+    }
+  }
+  .profile {
+    border: 1px solid red;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
