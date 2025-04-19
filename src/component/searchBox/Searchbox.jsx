@@ -16,7 +16,7 @@ function SearchBox() {
     height: "54px", // ارتفاع 54px
     backgroundColor: "#302F31", // رنگ پس‌زمینه
     color: "white", // رنگ متن
-    borderRadius: "15px", // گوشه‌های گرد (اختیاری، قابل تغییر)
+    borderRadius: "30px", // گوشه‌های گرد (اختیاری، قابل تغییر)
     fontSize: "16px", // اندازه فونت (اختیاری)
     fontFamily: "Arial, sans-serif", // فونت (اختیاری)
     placeholderColor: "#cccccc", // رنگ placeholder (اختیاری)
