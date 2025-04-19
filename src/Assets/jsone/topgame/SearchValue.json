@@ -1,0 +1,172 @@
+[
+  {
+    "id": 0,
+    "name": "God of War (2018)",
+    "genre": "Action"
+  },
+  {
+    "id": 1,
+    "name": "The Witcher 3: Wild Hunt",
+    "genre": "Action"
+  },
+  {
+    "id": 2,
+    "name": "Uncharted 4: A Thief's End",
+    "genre": "Adventure"
+  },
+  {
+    "id": 3,
+    "name": "The Legend of Zelda: Breath of the Wild",
+    "genre": "Adventure"
+  },
+  {
+    "id": 4,
+    "name": "Final Fantasy VII",
+    "genre": "RPG"
+  },
+  {
+    "id": 5,
+    "name": "Baldur's Gate 3",
+    "genre": "RPG"
+  },
+  {
+    "id": 6,
+    "name": "Call of Duty: Modern Warfare",
+    "genre": "Shooter"
+  },
+  {
+    "id": 7,
+    "name": "DOOM Eternal",
+    "genre": "Shooter"
+  },
+  {
+    "id": 8,
+    "name": "Portal 2",
+    "genre": "Puzzle"
+  },
+  {
+    "id": 9,
+    "name": "Tetris Effect",
+    "genre": "Puzzle"
+  },
+  {
+    "id": 10,
+    "name": "Civilization VI",
+    "genre": "Strategy"
+  },
+  {
+    "id": 11,
+    "name": "StarCraft II",
+    "genre": "Strategy"
+  },
+  {
+    "id": 12,
+    "name": "The Sims 4",
+    "genre": "Simulation"
+  },
+  {
+    "id": 13,
+    "name": "Microsoft Flight Simulator",
+    "genre": "Simulation"
+  },
+  {
+    "id": 14,
+    "name": "FIFA 23",
+    "genre": "Sports"
+  },
+  {
+    "id": 15,
+    "name": "NBA 2K25",
+    "genre": "Sports"
+  },
+  {
+    "id": 16,
+    "name": "Street Fighter V",
+    "genre": "Fighting"
+  },
+  {
+    "id": 17,
+    "name": "Tekken 7",
+    "genre": "Fighting"
+  },
+  {
+    "id": 18,
+    "name": "Guitar Hero",
+    "genre": "Music/Rhythm"
+  },
+  {
+    "id": 19,
+    "name": "Beat Saber",
+    "genre": "Music/Rhythm"
+  },
+  {
+    "id": 20,
+    "name": "Minecraft",
+    "genre": "Sandbox"
+  },
+  {
+    "id": 21,
+    "name": "Grand Theft Auto V",
+    "genre": "Sandbox"
+  },
+  {
+    "id": 22,
+    "name": "Mario Party Superstars",
+    "genre": "Party"
+  },
+  {
+    "id": 23,
+    "name": "Overcooked 2",
+    "genre": "Party"
+  },
+  {
+    "id": 24,
+    "name": "Brain Age",
+    "genre": "Educational"
+  },
+  {
+    "id": 25,
+    "name": "Math Blaster",
+    "genre": "Educational"
+  },
+  {
+    "id": 26,
+    "name": "Gran Turismo 7",
+    "genre": "Vehicle Simulation"
+  },
+  {
+    "id": 27,
+    "name": "Forza Horizon 5",
+    "genre": "Vehicle Simulation"
+  },
+  {
+    "id": 28,
+    "name": "Carcassonne",
+    "genre": "Digital Tabletop"
+  },
+  {
+    "id": 29,
+    "name": "Ticket to Ride",
+    "genre": "Digital Tabletop"
+  },
+  {
+    "id": 30,
+    "name": "World of Warcraft",
+    "genre": "MMO"
+  },
+  {
+    "id": 31,
+    "name": "Final Fantasy XIV",
+    "genre": "MMO"
+  },
+  {
+    "id": 32,
+    "name": "Journey",
+    "genre": "Interactive Art"
+  },
+  {
+    "id": 33,
+    "name": "Flower",
+    "genre": "Interactive Art"
+  }
+]
