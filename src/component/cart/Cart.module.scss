@@ -7,6 +7,7 @@
   overflow: hidden;
   transform: scale(1);
   transition: 0.5s all;
+
   &:hover {
     transform: scale(1.02);
     transition: 0.5s all;
@@ -42,7 +43,6 @@
 
   &_save_box {
     opacity: 0;
-    z-index: 99;
   }
   &_save_box {
     opacity: 0;
