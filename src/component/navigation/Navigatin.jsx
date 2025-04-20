@@ -17,7 +17,7 @@ import {ReactComponent as AboutUsIcon} from "../../Assets/Icon/AboutUs.svg";
 function Navigation() {
   return (
     <>
-      <div className="container">
+      <nav className="container">
         <div className="items">
           <div className="logo_search">
             <div className="logo">
@@ -26,16 +26,34 @@ function Navigation() {
 
             <Searchbox />
 
-            <div className="navigationMenu">
-              <HomeIcon className="HomePageSvgIcon"/>
-              <AllGamesIcon className="HomePageSvgIcon"/>
-              <FavouriteIcon className="HomePageSvgIcon"/>
-              <AboutUsIcon className="HomePageSvgIcon"/>
+            <div className="navigation-Menu">
+              <a href="#" className="navigation-Menu-Items">
+                <button>
+                  <span>صفحه اصلی</span>
+                </button>
+              </a>
+              <a href="#" className="navigation-Menu-Items">
+                <button>
+                  <span>بازی ها</span>
+                </button>
+              </a>
+              <a href="#" className="navigation-Menu-Items">
+                <button>
+                  <span>مورد علاقه</span>
+                </button>
+              </a>
+              <a href="#" className="navigation-Menu-Items">
+                <button>
+                  <span>درمورد ما</span>
+                </button>
+              </a>
             </div>
           </div>
+
           <Profile/>
+
         </div>
-      </div>
+      </nav>
     </>
   );
 }

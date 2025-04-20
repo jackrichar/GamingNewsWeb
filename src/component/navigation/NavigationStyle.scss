@@ -23,13 +23,50 @@
     }
   }
 
-  .navigationMenu {
+  .navigation-Menu {
     display: flex;
     width: 505px;
+    height: 100%;
     justify-content: space-between;
     align-items: center;
+    
+    .navigation-Menu-Items{
+      height: 100%;
+      text-decoration: none;
+      button{
+        width: 7rem;
+        height: 100%;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        background-color: #1a1528;
+        transition: all ease-in-out 150ms;
 
-    .HomePageSvgIcon{
+        span{
+          color: #ffffff;
+          font-family: var(--IranSansWeb), serif;
+          font-weight: bold;
+          font-size: 15px;
+          position: relative;
+          top: 0;
+          transition: all ease-in-out 150ms;
+        }
+      }
+      button:hover{
+        background-color: #352a52;
+        border: 1px solid #241f37;
+        transition: background-color ease-in-out 150ms;
+
+        span{
+          position: relative;
+          top: -8px;
+          transition: top ease-in-out 150ms;
+        }
+      }
+
+    }
+
+    .HomePage-Svg-Icon{
       width: 30px;
       height: 30px;
     }
