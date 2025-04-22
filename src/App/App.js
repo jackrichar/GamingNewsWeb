@@ -1,11 +1,13 @@
 import React from "react";
 import "./AppStyle.scss";
-import Cart from "../component/cart/Cart";
 
+// Import Component
+import Cart from "../component/cart/Cart";
+import Navigation from "../component/navigation/Navigatin";
 const App = () => {
   return (
     <div className="App-Background">
-      <Cart />
+      <Navigation/>
     </div>
   );
 };
