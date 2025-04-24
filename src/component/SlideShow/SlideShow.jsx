@@ -1,4 +1,5 @@
 import React from "react";
+import "./SlideShow.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import RDR from "../../Assets/image/Untitled.png";
@@ -33,15 +34,6 @@ const Slideshow = () => {
         ></button>
       </div>
       <div className="carousel-inner">
-        <div className="carousel-item active">
-          <img src={RDR} className="d-block w-100" alt="Slide 1" />
-        </div>
-        <div className="carousel-item">
-          <img src={RDR} className="d-block w-100" alt="Slide 2" />
-        </div>
-        <div className="carousel-item">
-          <img src={RDR} className="d-block w-100" alt="Slide 3" />
-        </div>
         <div className="carousel-item active">
           <img src={RDR} className="d-block w-100" alt="Slide 1" />
         </div>
