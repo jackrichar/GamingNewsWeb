@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect} from "react";
+import React, {useState, useRef, useEffect, createContext} from "react";
 import "./NavigationStyle.scss";
 
 // Import Component
@@ -15,8 +15,9 @@ import {ReactComponent as FavouriteIcon} from "../../Assets/Icon/Favourite.svg";
 import {ReactComponent as AboutUsIcon} from "../../Assets/Icon/AboutUs.svg";
 import {ReactComponent as SearchIcon} from "../../Assets/Icon/search.svg";
 
-function Navigation() {
+function Navigation({setNavigationStatus}) {
     const NavigationSelect = useRef(null);
+
     const [Open,setOpen] = useState(false);
     const [Select,setSelect] = useState(false);
 
@@ -34,6 +35,10 @@ function Navigation() {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, []);
+
+    useEffect(()=>{
+        setNavigationStatus(Open);
+    },[Open, setNavigationStatus])
 
 
   return (
