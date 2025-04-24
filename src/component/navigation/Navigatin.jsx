@@ -37,7 +37,11 @@ function Navigation() {
 
 
   return (
-      <nav className={`Navigation-Background ${Open ? "Open-Navigation" : "Close-Navigation"}`} ref={NavigationSelect} onClick={() => setOpen(true)}>
+      <nav
+          className={`Navigation-Background ${Open ? "Open-Navigation" : "Close-Navigation"}`}
+          ref={NavigationSelect}
+          onClick={() => setOpen(true)}
+      >
           <div className="Navigation-Logo">
               <img src={logo} alt="Logo"/>
           </div>
@@ -48,22 +52,42 @@ function Navigation() {
           <div className="Navigation-Content">
               <div className="Navigation-Content-Icon">
                   <button className="Navigation-Content-Select">
-                      <HomeIcon className="Navigation-Icon"/>
+                      <div className="NC-ICO">
+                          <HomeIcon className="Navigation-Icon"/>
+                      </div>
+                      <div className={Open ? "Show-Navigation-Text" : "Hide-Navigation-Text"}>
+                          <span>صفحه اصلی</span>
+                      </div>
                   </button>
               </div>
               <div className="Navigation-Content-Icon">
                   <button className="Navigation-Content-Select">
-                      <AllGamesIcon className="Navigation-Icon"/>
+                      <div className="NC-ICO">
+                          <AllGamesIcon className="Navigation-Icon"/>
+                      </div>
+                      <div className={Open ? "Show-Navigation-Text" : "Hide-Navigation-Text"}>
+                          <span>بازی ها</span>
+                      </div>
                   </button>
               </div>
               <div className="Navigation-Content-Icon">
                   <button className="Navigation-Content-Select">
-                      <FavouriteIcon className="Navigation-Icon"/>
+                      <div className="NC-ICO">
+                          <FavouriteIcon className="Navigation-Icon"/>
+                      </div>
+                      <div className={Open ? "Show-Navigation-Text" : "Hide-Navigation-Text"}>
+                          <span>مورد علاقه</span>
+                      </div>
                   </button>
               </div>
               <div className="Navigation-Content-Icon">
                   <button className="Navigation-Content-Select">
-                      <AboutUsIcon className="Navigation-Icon"/>
+                      <div className="NC-ICO">
+                          <AboutUsIcon className="Navigation-Icon"/>
+                      </div>
+                      <div className={Open ? "Show-Navigation-Text" : "Hide-Navigation-Text"}>
+                          <span>درمورد ما</span>
+                      </div>
                   </button>
               </div>
           </div>
