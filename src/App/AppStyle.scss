@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+
   .Size {
     fill: blue;
     stroke-width: 25px;
@@ -15,7 +16,6 @@
     height: 100%;
   }
   .App-Content {
-    width: 100%;
     height: 100%;
   }
 }
