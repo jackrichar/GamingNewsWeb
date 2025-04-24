@@ -6,9 +6,6 @@ import Cart from "../component/cart/Cart";
 import Navigation from "../component/navigation/Navigatin";
 import SlideShow from "../component/SlideShow/SlideShow";
 
-
-
-
 const App = () => {
   return (
     <div className="App-Background">
