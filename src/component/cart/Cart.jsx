@@ -1,33 +1,20 @@
 import React from "react";
-import style from "./Cart.module.scss";
-import RDR from "../../Assets/image/Untitled.png";
+import "./Cart.scss";
 
-function Cart() {
+const Cart = ({ id, name, genre, poster }) => {
   return (
-    <div className={style.main}>
-      <div className={style.main_container}>
-        <div className={style.main_image_container}>
-          <img className={style.main_image} src={RDR}></img>
-        </div>
-        <div className={style.main_save_box}>
-          <div className={style.main_save_button}>
-            <input
-              className={style.main_save_button_input}
-              type="button"
-              value={"save"}
-            ></input>
-          </div>
-          <div className={style.main_more_button}>
-            <input
-              className={style.main_more_button_input}
-              type="button"
-              value={"more"}
-            ></input>
-          </div>
-        </div>
+    <div className="game-card">
+      <img src={poster} alt={name} className="game-poster" />
+      <div className="game-info">
+        <h3>{name}</h3>
+        <p>
+          <strong>ژانر:</strong> {genre}
+        </p>
+
+        <button className="details-btn">جزئیات بیشتر</button>
       </div>
     </div>
   );
-}
+};
 
 export default Cart;

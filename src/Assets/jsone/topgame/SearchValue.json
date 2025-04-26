@@ -16,5 +16,23 @@
     "name": "Dead Redemption 2",
     "genre": "Adventure",
     "poster": "https://assetsio.gnwcdn.com/RDR2-ART.jpg?width=690&quality=70&format=jpg&auto=webp"
+  },
+  {
+    "id": 0,
+    "name": "God of War (2018)",
+    "genre": "Action",
+    "poster": "https://assets-prd.ignimgs.com/2022/05/16/god-of-war-2018-1652716403586.jpg?width=300&crop=1%3A1%2Csmart&auto=webp"
+  },
+  {
+    "id": 1,
+    "name": "The Witcher 3: Wild Hunt",
+    "genre": "Action",
+    "poster": "https://www.nintendo.com/eu/media/images/10_share_images/games_15/nintendo_switch_download_software_1/H2x1_NSwitchDS_TheWitcher3WildHunt_enGB_image1600w.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Dead Redemption 2",
+    "genre": "Adventure",
+    "poster": "https://assetsio.gnwcdn.com/RDR2-ART.jpg?width=690&quality=70&format=jpg&auto=webp"
   }
 ]

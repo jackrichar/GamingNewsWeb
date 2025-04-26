@@ -1,24 +1,34 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./AppStyle.scss";
 
 // Import Component
 import Navigation from "../component/navigation/Navigatin";
-import SlideShow from "../component/SlideShow/SlideShow";
-
-
-
+import Cart from "../component/cart/Cart";
+import GameList from "../component/GameList/GameList";
 
 const App = () => {
-    const [NavigationStatus, setNavigationStatus] = useState(false);
+  const [NavigationStatus, setNavigationStatus] = useState(false);
   return (
-    <div className="App-Background">
-        <div className="App-Navigation" style={ NavigationStatus ? {width: "13rem"} : {width: "55px"}}>
-            <Navigation setNavigationStatus={setNavigationStatus}/>
+    <>
+      <div className="App-Background">
+        <div
+          className="App-Navigation"
+          style={NavigationStatus ? { width: "13rem" } : { width: "55px" }}
+        >
+          <Navigation setNavigationStatus={setNavigationStatus} />
         </div>
-        <div className="App-Content" style={ NavigationStatus ? {width: "calc(100% - 13rem)"} : {width: "calc(100% - 55px)"}}>
-
+        <div
+          className="App-Content"
+          style={
+            NavigationStatus
+              ? { width: "calc(100% - 13rem)" }
+              : { width: "calc(100% - 55px)" }
+          }
+        >
+          <GameList />
         </div>
-    </div>
+      </div>
+    </>
   );
 };
 
