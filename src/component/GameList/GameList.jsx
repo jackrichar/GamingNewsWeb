@@ -1,6 +1,6 @@
 import React from "react";
 import GameCard from "../cart/Cart";
-import gamesData from "../../Assets/jsone/topgame/SearchValue.json";
+import gamesData from "../../Assets/jsone/Search.json";
 import "./GameListe.scss";
 
 const GameList = () => {
@@ -11,7 +11,6 @@ const GameList = () => {
           key={game.id}
           id={game.id}
           name={game.name}
-          genre={game.genre}
           poster={game.poster}
         />
       ))}

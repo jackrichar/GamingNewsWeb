@@ -1,6 +1,6 @@
 import React from "react";
 import { ReactSearchAutocomplete } from "react-search-autocomplete";
-import searchData from "../../Assets/jsone/topgame/SearchValue.json"; // مسیر فایل JSON
+import searchData from "../../Assets/jsone/Search.json"; // مسیر فایل JSON
 
 // Import Sass
 import "./SearchBoxStyle.scss";
