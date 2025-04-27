@@ -11,6 +11,7 @@ const GameList = () => {
           key={game.id}
           id={game.id}
           name={game.name}
+          genre={game.genre}
           poster={game.poster}
         />
       ))}
