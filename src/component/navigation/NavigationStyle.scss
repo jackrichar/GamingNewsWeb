@@ -1,4 +1,5 @@
 // Open Navigation
+
 @keyframes ShowText {
   from {
     opacity: 0;
@@ -30,7 +31,10 @@
   animation: ShowText 150ms ease-in-out forwards;
 }
 
+/////////////////////////////////////////////////////////////////////////////////////
+
 //Close Navigation
+
 @keyframes HideText {
   from {
     opacity: 1;
@@ -61,6 +65,20 @@
 
   animation: HideText 150ms ease-in-out forwards;
 }
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+//Select Section
+
+.Active-Select {
+  width: 100% !important;
+  height: 45px !important;
+  background-color: rgb(75, 69, 110) !important;
+  border-radius: 10px !important;
+  transition: background-color ease-in-out 150ms !important;
+}
+
+////////////////////////////////////////////////////////////////////////////////////
 
 // Navigation Style
 .Navigation-Background {
@@ -135,27 +153,33 @@
         background-color: rgb(75, 69, 110);
         transition: background-color ease-in-out 150ms;
       }
+
+      .Navigation-Content-Select:active {
+        scale: 0.9;
+      }
     }
 
     .Navigation-Content-Show-Title{
       position: absolute;
       visibility: hidden;
-      width: 130px;
-      height: 40px;
+      width: auto;
+      height: 35px;
       background-color: #1a1528;
       border-radius: 5px;
       right: 80px;
       opacity: 0;
       display: flex;
       justify-content: center;
+      padding: 0 10px;
       align-items: center;
       transition: all ease-in-out 150ms;
 
       span{
         font-family: var(--IranSansWeb), serif;
-        font-weight: bold;
         color: #ffffff;
         opacity: 0;
+        font-size: 10px;
+        white-space: nowrap;
         transition:  opacity ease-in-out 500ms;
       }
     }

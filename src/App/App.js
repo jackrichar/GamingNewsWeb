@@ -25,7 +25,8 @@ const App = () => {
               : { width: "calc(100% - 55px)" }
           }
         >
-          <GameList />
+            <GameList/>
+
         </div>
       </div>
     </>

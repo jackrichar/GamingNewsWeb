@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import "./NavigationStyle.scss";
 
 // Import Component
-import Searchbox from "../searchBox/Searchbox";
+import Search from "./Search/Search";
 import Profile from "./Profile/Profile";
 
 // Import PNG Image
@@ -11,16 +11,22 @@ import logo from "../../Assets/image/Logo.png";
 //Import SVG Icon
 import {ReactComponent as HomeIcon} from "../../Assets/Icon/Home.svg";
 import {ReactComponent as AllGamesIcon} from "../../Assets/Icon/AllGames.svg";
-import {ReactComponent as Hardware} from "../../Assets/Icon/Hardware.svg";
 import {ReactComponent as AboutUsIcon} from "../../Assets/Icon/AboutUs.svg";
 import {ReactComponent as SearchIcon} from "../../Assets/Icon/search.svg";
 import {ReactComponent as ArrowIcon} from "../../Assets/Icon/Arrow.svg";
 import {ReactComponent as ProfileIcon} from "../../Assets/Icon/Profile.svg";
 
 function Navigation({setNavigationStatus}) {
+
+    const [selectedItem, setSelectedItem] = useState('');
+
+    //////////////////////////////////////////////////////////////////////////////
+
     const [Open,setOpen] = useState(false);
     const [Delay, setDelay] = useState(false);
-    const [Select,setSelect] = useState(false);
+    const [OpenModal, setOpenModal] = useState(false);
+
+    //////////////////////////////////////////////////////////////////////////////
 
     useEffect(()=>{
         setNavigationStatus(Open);
@@ -40,15 +46,35 @@ function Navigation({setNavigationStatus}) {
         return () => clearTimeout(timer);
     }, [Open]);
 
+    useEffect(() => {
+        setTimeout(()=>{
+
+        }, 2)
+    })
+
+    ///////////////////////////////////////////////////////////////////////////////
+
+    const handleSelect = (event) => {
+        const target = event.target.closest('button[data-name]');
+
+        if (target) {
+            const name = target.dataset.name;
+            console.log(name)
+            setSelectedItem(name);
+        }
+    }
+
 
   return (
       <nav className={`Navigation-Background ${Open ? "Open-Navigation" : "Close-Navigation"}`}>
           <div className="Navigation-Logo">
               <img src={logo} alt="Logo"/>
           </div>
-          <div className="Navigation-Content">
+          <div className="Navigation-Content" onClick={(e) => handleSelect(e)}>
               <div className="Navigation-Content-Icon">
-                  <button className="Navigation-Content-Select">
+                  <button
+                      onClick={() => setOpenModal(true)}
+                      className={`Navigation-Content-Select ${OpenModal ? 'Active-Select' : ''}`}>
                       <div className="NC-ICO">
                           <SearchIcon className="Navigation-Icon"/>
                       </div>
@@ -65,9 +91,10 @@ function Navigation({setNavigationStatus}) {
                           ):
                           null
                   }
+                  <Search OpenModal={OpenModal} setOpenModal={setOpenModal}/>
               </div>
               <div className="Navigation-Content-Icon">
-                  <button className="Navigation-Content-Select">
+                  <button data-name="Home" className={`Navigation-Content-Select ${selectedItem === 'Home' ? 'Active-Select' : ''}`}>
                       <div className="NC-ICO">
                           <HomeIcon className="Navigation-Icon"/>
                       </div>
@@ -86,7 +113,7 @@ function Navigation({setNavigationStatus}) {
                   }
               </div>
               <div className="Navigation-Content-Icon">
-                  <button className="Navigation-Content-Select">
+                  <button data-name="AllGames" className={`Navigation-Content-Select ${selectedItem === 'AllGames' ? 'Active-Select' : ''}`}>
                       <div className="NC-ICO">
                           <AllGamesIcon className="Navigation-Icon"/>
                       </div>
@@ -105,7 +132,7 @@ function Navigation({setNavigationStatus}) {
                   }
               </div>
               <div className="Navigation-Content-Icon">
-                  <button className="Navigation-Content-Select">
+                  <button data-name="AboutUs" className={`Navigation-Content-Select ${selectedItem === 'AboutUs' ? 'Active-Select' : ''}`}>
                       <div className="NC-ICO">
                           <AboutUsIcon className="Navigation-Icon"/>
                       </div>
@@ -124,7 +151,7 @@ function Navigation({setNavigationStatus}) {
                   }
               </div>
               <div className="Navigation-Content-Icon">
-                  <button className="Navigation-Content-Select">
+                  <button data-name="Profile" className={`Navigation-Content-Select ${selectedItem === 'Profile' ? 'Active-Select' : ''}`}>
                       <div className="NC-ICO">
                           <ProfileIcon className="Navigation-Icon"/>
                       </div>
