@@ -3,33 +3,38 @@
     "id": 0,
     "name": "God of War (2018)",
     "genre": "Action",
-    "poster": "https://assets-prd.ignimgs.com/2022/05/16/god-of-war-2018-1652716403586.jpg?width=300&crop=1%3A1%2Csmart&auto=webp"
+    "poster": "https://assets-prd.ignimgs.com/2022/05/16/god-of-war-2018-1652716403586.jpg?width=300&crop=1%3A1%2Csmart&auto=webp",
+    "SaveGame": false
   },
   {
-    "id": 0,
+    "id": 1,
     "name": "God of War (2018)",
     "genre": "Action",
-    "poster": "https://assets-prd.ignimgs.com/2022/05/16/god-of-war-2018-1652716403586.jpg?width=300&crop=1%3A1%2Csmart&auto=webp"
-  },
-
-  {
-    "id": 0,
-    "name": "God of War (2018)",
-    "genre": "Action",
-    "poster": "https://assets-prd.ignimgs.com/2022/05/16/god-of-war-2018-1652716403586.jpg?width=300&crop=1%3A1%2Csmart&auto=webp"
+    "poster": "https://assets-prd.ignimgs.com/2022/05/16/god-of-war-2018-1652716403586.jpg?width=300&crop=1%3A1%2Csmart&auto=webp",
+    "SaveGame": false
   },
 
   {
-    "id": 0,
+    "id": 2,
     "name": "God of War (2018)",
     "genre": "Action",
-    "poster": "https://assets-prd.ignimgs.com/2022/05/16/god-of-war-2018-1652716403586.jpg?width=300&crop=1%3A1%2Csmart&auto=webp"
+    "poster": "https://assets-prd.ignimgs.com/2022/05/16/god-of-war-2018-1652716403586.jpg?width=300&crop=1%3A1%2Csmart&auto=webp",
+    "SaveGame": false
   },
 
   {
-    "id": 0,
+    "id": 3,
     "name": "God of War (2018)",
     "genre": "Action",
-    "poster": "https://assets-prd.ignimgs.com/2022/05/16/god-of-war-2018-1652716403586.jpg?width=300&crop=1%3A1%2Csmart&auto=webp"
+    "poster": "https://assets-prd.ignimgs.com/2022/05/16/god-of-war-2018-1652716403586.jpg?width=300&crop=1%3A1%2Csmart&auto=webp",
+    "SaveGame": false
+  },
+
+  {
+    "id": 4,
+    "name": "God of War (2018)",
+    "genre": "Action",
+    "poster": "https://assets-prd.ignimgs.com/2022/05/16/god-of-war-2018-1652716403586.jpg?width=300&crop=1%3A1%2Csmart&auto=webp",
+    "SaveGame": false
   }
 ]
