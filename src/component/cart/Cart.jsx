@@ -1,5 +1,6 @@
 import React from "react";
 import "./Cart.scss";
+import { ReactComponent as FavouriteIcon } from "../../Assets/Icon/Favourite.svg";
 
 const Cart = ({ id, name, genre, poster }) => {
   return (
@@ -8,7 +9,10 @@ const Cart = ({ id, name, genre, poster }) => {
       <h3 className="game-name">{name}</h3>
 
       <div className="game-info">
-        <button className="details-btn">جزئیات بیشتر</button>
+        <button className="details-btn">
+          <FavouriteIcon className="favouriticon" />
+        </button>
+        <p>بیشتر</p>
       </div>
     </div>
   );
