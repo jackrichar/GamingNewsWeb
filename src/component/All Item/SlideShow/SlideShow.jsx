@@ -1,32 +1,48 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/autoplay";
+
+// import required modules
+import { Navigation, Autoplay } from "swiper/modules";
+
+// Import JSON data
 import slidesData from "../../../Assets/jsone/Search.json";
-import "./SlideShow.module.scss";
 
-const Slideshow = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+// Import custom styles
+import styles from "./SlideShow.module.scss";
 
-  // برای عوض کردن اسلاید هر ۳ ثانیه
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prevSlide) =>
-        prevSlide === slidesData.length - 1 ? 0 : prevSlide + 1
-      );
-    }, 3000); // هر ۳ ثانیه اسلاید عوض می‌شه
-
-    return () => clearInterval(interval); // تمیز کردن interval
-  }, []);
+export default function Slideshow() {
   return (
-    <div className="slideshow">
-      <div className="slide">
-        <img
-          src={slidesData[currentSlide].poster}
-          alt={slidesData[currentSlide].name}
-          className="slide-image"
-        />
-        <h2 className="slide-title">{slidesData[currentSlide].name}</h2>
-      </div>
-    </div>
+    <Swiper
+      navigation={true}
+      modules={[Navigation, Autoplay]}
+      className={styles.mySwiper}
+      autoplay={{
+        delay: 3000, // هر ۳ ثانیه اسلاید عوض می‌شه
+        disableOnInteraction: false,
+      }}
+      loop={true} // حلقه بی‌نهایت
+    >
+      {slidesData.map((slide) => (
+        <SwiperSlide key={slide.id}>
+          <div
+            className={styles.slide}
+            style={{
+              backgroundImage: `url(${slide.Poster})`,
+            }}
+          >
+            <div className={styles.rating}>
+              <span>{slide.rating}</span>
+            </div>
+            <h2 className={styles.slideTitle}>{slide.name}</h2>
+          </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
-};
-
-export default Slideshow;
+}

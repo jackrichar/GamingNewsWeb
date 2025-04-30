@@ -27,7 +27,7 @@ const App = () => {
               : { width: "calc(100% - 55px)" }
           }
         >
-      
+          <Slideshow />
         </div>
       </div>
     </>
