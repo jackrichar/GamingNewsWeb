@@ -5,6 +5,7 @@ import "./AppStyle.scss";
 import Navigation from "../component/navigation/Navigatin";
 import Cart from "../component/cart/Cart";
 import GameList from "../component/GameList/GameList";
+import Slideshow from "../component/SlideShow/SlideShow";
 
 const App = () => {
   const [NavigationStatus, setNavigationStatus] = useState(false);
@@ -25,8 +26,7 @@ const App = () => {
               : { width: "calc(100% - 55px)" }
           }
         >
-            <GameList/>
-
+          <Slideshow />
         </div>
       </div>
     </>

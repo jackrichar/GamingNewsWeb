@@ -1,67 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import slidesData from "../../Assets/jsone/Search.json";
 import "./SlideShow.module.scss";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import RDR from "../../Assets/image/Untitled.png";
 
 const Slideshow = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // برای عوض کردن اسلاید هر ۳ ثانیه
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prevSlide) =>
+        prevSlide === slidesData.length - 1 ? 0 : prevSlide + 1
+      );
+    }, 3000); // هر ۳ ثانیه اسلاید عوض می‌شه
+
+    return () => clearInterval(interval); // تمیز کردن interval
+  }, []);
   return (
-    <div
-      id="carouselExampleIndicators"
-      className="carousel slide"
-      data-bs-ride="carousel"
-    >
-      <div className="carousel-indicators">
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="0"
-          className="active"
-          aria-current="true"
-          aria-label="Slide 1"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="1"
-          aria-label="Slide 2"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="2"
-          aria-label="Slide 3"
-        ></button>
+    <div className="slideshow">
+      <div className="slide">
+        <img
+          src={slidesData[currentSlide].poster}
+          alt={slidesData[currentSlide].name}
+          className="slide-image"
+        />
+        <h2 className="slide-title">{slidesData[currentSlide].name}</h2>
       </div>
-      <div className="carousel-inner">
-        <div className="carousel-item active">
-          <img src={RDR} className="d-block w-100" alt="Slide 1" />
-        </div>
-        <div className="carousel-item">
-          <img src={RDR} className="d-block w-100" alt="Slide 2" />
-        </div>
-        <div className="carousel-item">
-          <img src={RDR} className="d-block w-100" alt="Slide 3" />
-        </div>
-      </div>
-      <button
-        className="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="prev"
-      >
-        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Previous</span>
-      </button>
-      <button
-        className="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="next"
-      >
-        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Next</span>
-      </button>
     </div>
   );
 };
