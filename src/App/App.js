@@ -7,30 +7,17 @@ import HomePage from "../component/HomePage/HomePage";
 import Cart from "../component/All Item/cart/Cart";
 import GameList from "../component/All Item/GameList/GameList";
 import Slideshow from "../component/All Item/SlideShow/SlideShow";
-import CartSlideShow from "../component/All Item/CartSlideShow/CartSlideShow";
 
 const App = () => {
   const [NavigationStatus, setNavigationStatus] = useState(false);
   return (
     <>
       <div className="App-Background">
-        <div
-          className="App-Navigation"
-          style={NavigationStatus ? { width: "13rem" } : { width: "55px" }}
-        >
+        <div className={`App-Navigation  ${NavigationStatus ? "Open-App-Navigation" : "Close-App-Navigation"}`}>
           <Navigation setNavigationStatus={setNavigationStatus} />
         </div>
-        <div
-          className="App-Content"
-          style={
-            NavigationStatus
-              ? { width: "calc(100% - 13rem)" }
-              : { width: "calc(100% - 55px)" }
-          }
-        >
-          <Slideshow />
-          <CartSlideShow />
-          <GameList />
+        <div className={`App-Content  ${NavigationStatus ? "Open-App-Content" : "Close-App-Content"}`}>
+          <HomePage/>
         </div>
       </div>
     </>

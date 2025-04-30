@@ -78,7 +78,7 @@ function Navigation({setNavigationStatus}) {
                       <div className="NC-ICO">
                           <SearchIcon className="Navigation-Icon"/>
                       </div>
-                      <div className={Open ? "Show-Navigation-Text" : "Hide-Navigation-Text"}>
+                      <div className={`Icon-Title ${Open ? "Show-Navigation-Text" : "Hide-Navigation-Text"}`}>
                           <span>جستوجو</span>
                       </div>
                   </button>
@@ -98,7 +98,7 @@ function Navigation({setNavigationStatus}) {
                       <div className="NC-ICO">
                           <HomeIcon className="Navigation-Icon"/>
                       </div>
-                      <div className={Open ? "Show-Navigation-Text" : "Hide-Navigation-Text"}>
+                      <div className={`Icon-Title ${Open ? "Show-Navigation-Text" : "Hide-Navigation-Text"}`}>
                           <span>صفحه اصلی</span>
                       </div>
                   </button>
@@ -117,7 +117,7 @@ function Navigation({setNavigationStatus}) {
                       <div className="NC-ICO">
                           <AllGamesIcon className="Navigation-Icon"/>
                       </div>
-                      <div className={Open ? "Show-Navigation-Text" : "Hide-Navigation-Text"}>
+                      <div className={`Icon-Title ${Open ? "Show-Navigation-Text" : "Hide-Navigation-Text"}`}>
                           <span>بازی ها</span>
                       </div>
                   </button>
@@ -136,7 +136,7 @@ function Navigation({setNavigationStatus}) {
                       <div className="NC-ICO">
                           <AboutUsIcon className="Navigation-Icon"/>
                       </div>
-                      <div className={Open ? "Show-Navigation-Text" : "Hide-Navigation-Text"}>
+                      <div className={`Icon-Title ${Open ? "Show-Navigation-Text" : "Hide-Navigation-Text"}`}>
                           <span>درمورد ما</span>
                       </div>
                   </button>
@@ -155,7 +155,7 @@ function Navigation({setNavigationStatus}) {
                       <div className="NC-ICO">
                           <ProfileIcon className="Navigation-Icon"/>
                       </div>
-                      <div className={Open ? "Show-Navigation-Text" : "Hide-Navigation-Text"}>
+                      <div className={`Icon-Title ${Open ? "Show-Navigation-Text" : "Hide-Navigation-Text"}`}>
                           <span>پروفایل</span>
                       </div>
                   </button>
@@ -169,7 +169,7 @@ function Navigation({setNavigationStatus}) {
                           null
                   }
               </div>
-              <div className="Navigation-Content-Icon">
+              <div className="Navigation-Content-Icon Navigation-Button-Status">
                   <button className="Navigation-Content-Select" onClick={() => setOpen(!Open)}>
                       <div className="NC-ICO">
                           <ArrowIcon className="Navigation-Icon" style={Open ? {rotate: "0deg"} : {rotate: "180deg"}}/>

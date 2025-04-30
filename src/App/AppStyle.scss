@@ -10,7 +10,6 @@
     fill: blue;
     stroke-width: 25px;
   }
-
   .App-Navigation {
     z-index: 99999;
     width: auto;
@@ -19,5 +18,32 @@
   .App-Content {
     width: 80%;
     height: 100%;
+    background-color: #0e0b22;
+  }
+}
+
+// Change Style App-Navigation
+.Open-App-Navigation {
+  width: 13rem !important;
+}
+.Close-App-Navigation {
+  width: 55px !important;
+}
+
+// Change Style App Content
+.Open-App-Content {
+  width: calc(100% - 13rem) !important;
+}
+.Close-App-Content {
+  width: calc(100% - 55px) !important;
+}
+
+///////////////////////////////////////////////////////
+
+@media screen And (max-width: 520px) {
+  .App-Background {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
   }
 }
