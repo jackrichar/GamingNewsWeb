@@ -1,40 +1,82 @@
 [
   {
     "id": 0,
-    "name": "God of War (2018)",
-    "genre": "Action",
-    "poster": "https://assets-prd.ignimgs.com/2022/05/16/god-of-war-2018-1652716403586.jpg?width=300&crop=1%3A1%2Csmart&auto=webp",
+    "Title": "Batman Arkham Knight",
+    "Genre": "Action",
+    "Poster": "https://i.ebayimg.com/images/g/WXcAAOSwq9NkOjJf/s-l1200.jpg",
+    "Banner": "https://static1.squarespace.com/static/615dd9c46ea913604f68e0aa/615ddaca3a80a4746f9e7543/615ddaca3a80a4746f9e75cd/1657046751697/Project+Thumbnail+-+Batman+Arkham+Knight.jpg?format=1500w",
     "SaveGame": false
   },
   {
     "id": 1,
-    "name": "God of War (2018)",
-    "genre": "Action",
-    "poster": "https://assets-prd.ignimgs.com/2022/05/16/god-of-war-2018-1652716403586.jpg?width=300&crop=1%3A1%2Csmart&auto=webp",
-    "SaveGame": false
+    "Title": "The Witcher 3: Wild Hunt",
+    "Genre": "RPG",
+    "Poster": "https://i.ebayimg.com/00/s/MTYwMFgxMDY3/z/MCIAAOSwbP1aetq6/$_57.JPG?set_id=8800005007",
+    "Banner": "https://image.api.playstation.com/vulcan/ap/rnd/202211/0914/TvcIHkYqqln1RGbaFqBeuFp6.jpg",
+    "SaveGame": true
   },
-
   {
     "id": 2,
-    "name": "God of War (2018)",
-    "genre": "Action",
-    "poster": "https://assets-prd.ignimgs.com/2022/05/16/god-of-war-2018-1652716403586.jpg?width=300&crop=1%3A1%2Csmart&auto=webp",
+    "Title": "Red Dead Redemption 2",
+    "Genre": "Adventure",
+    "Poster": "https://i.ebayimg.com/images/g/d5EAAOSwgHNizgZc/s-l1200.jpg",
+    "Banner": "https://images.squarespace-cdn.com/content/v1/54e310f0e4b0f4a6ba3ac899/a8ad450f-4e91-478d-85a7-14eef0b75fef/Red+Dead+Redemption+2+Banner+650.jpg",
     "SaveGame": false
   },
-
   {
     "id": 3,
-    "name": "God of War (2018)",
-    "genre": "Action",
-    "poster": "https://assets-prd.ignimgs.com/2022/05/16/god-of-war-2018-1652716403586.jpg?width=300&crop=1%3A1%2Csmart&auto=webp",
-    "SaveGame": false
+    "Title": "God of War",
+    "Genre": "Action",
+    "Poster": "https://m.media-amazon.com/images/I/716XS+cJ-UL.jpg",
+    "Banner": "https://www.posterposse.com/wp-content/uploads/2018/06/God-Of-War-banner.jpeg",
+    "SaveGame": true
   },
-
   {
     "id": 4,
-    "name": "God of War (2018)",
-    "genre": "Action",
-    "poster": "https://assets-prd.ignimgs.com/2022/05/16/god-of-war-2018-1652716403586.jpg?width=300&crop=1%3A1%2Csmart&auto=webp",
+    "Title": "Cyberpunk 2077",
+    "Genre": "Sci-Fi RPG",
+    "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZk1OFCrahumMMGYwemiggWPZToY_OwWm1sw&s",
+    "Banner": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1091500/header.jpg?t=1734434803",
+    "SaveGame": true
+  },
+  {
+    "id": 5,
+    "Title": "Elden Ring",
+    "Genre": "Fantasy RPG",
+    "Poster": "https://preview.redd.it/bueqtztxmnj81.png?width=640&crop=smart&auto=webp&s=377e0d875affec6537a26c6cc7f4721aebdeaba5",
+    "Banner": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS__eBA_kN-v83GvCsfu9uhywzGCj4HROBwNw&s",
+    "SaveGame": false
+  },
+  {
+    "id": 6,
+    "Title": "Horizon Zero Dawn",
+    "Genre": "Action RPG",
+    "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRd8mB6hOooNbIne0hZkLuErh40xnwJBCWJg&s",
+    "Banner": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3-6eJOqM4sYM1bGQEg65QbKxRzv5Eo3KFkg&s",
+    "SaveGame": true
+  },
+  {
+    "id": 7,
+    "Title": "Assassin's Creed Valhalla",
+    "Genre": "Action Adventure",
+    "Poster": "https://m.media-amazon.com/images/I/61p5e0TQnHL._AC_UF894,1000_QL80_.jpg",
+    "Banner": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwIPNxvrGPLqrbQ1FK8bu7u1szqrDGNEq74w&s",
+    "SaveGame": false
+  },
+  {
+    "id": 8,
+    "Title": "Death Stranding",
+    "Genre": "Adventure",
+    "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSWuC-V3GjJWjgd4_G_Igoirz-UpFoMzx47g&s",
+    "Banner": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-ZzTjH7ovzc5_ut47z4RJ6sy3YyqtKjcONA&s",
+    "SaveGame": true
+  },
+  {
+    "id": 9,
+    "Title": "Far Cry 6",
+    "Genre": "FPS",
+    "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR53_G0V92hXTW52nRmUS06p3mAjGu2Nw1OfA&s",
+    "Banner": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJNlQUmm63erhTTlq_OwprPKV-3r5jZkb3zQ&s",
     "SaveGame": false
   }
 ]

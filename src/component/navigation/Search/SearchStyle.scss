@@ -33,8 +33,6 @@
 .Show-Result-Box{
   visibility: visible !important;
   opacity: 1 !important;
-  height: 3em !important;
-  transition: all ease-in-out 150ms 200ms;
 }
 ///////////////////////////////////////////////////////////////
 // Search Modal Style
@@ -52,6 +50,7 @@
   backdrop-filter: blur(20px);
 
   .Search-Parent{
+    position: relative;
     width: auto;
     height: auto;
     display: flex;
@@ -149,16 +148,60 @@
       }
     }
 
-    .Search-Result-Box{
+    .Search-Result-Box-Background{
       position: absolute;
-      top: 21.7em;
-      width: 30rem;
-      height: 0;
-      visibility: hidden;
-      opacity: 0;
-      background-color: #0c0a09;
+      width: auto;
+      height: auto;
+      top: 3.2em;
+      overflow: hidden;
       border-radius: 0 0 10px 10px;
-      transition: all ease-in-out 150ms;
+
+      .Search-Result-Box{
+        direction: ltr;
+        width: 30rem;
+        height: auto;
+        max-height: 12em;
+        visibility: hidden;
+        opacity: 0;
+        background-color: #0c0a09;
+        border-radius: 0 0 10px 10px;
+        border-left: 1px solid #57534e;
+        border-right: 1px solid #57534e;
+        border-bottom: 1px solid #57534e;
+        overflow-y: auto;
+        overflow-x: hidden;
+        transition: all ease-in-out 150ms;
+      }
+
+      // All Scroll Bar
+      .Search-Result-Box::-webkit-scrollbar{
+        width: 5px;
+      }
+
+      // Background Scroll Bar
+      .Search-Result-Box::-webkit-scrollbar-track{
+        background-color: #1e1e2f;
+      }
+
+      // Thumb Scroll Bar
+      .Search-Result-Box::-webkit-scrollbar-thumb{
+        background-color: #3e3e5e;
+        transition: background-color ease-in-out 150ms;
+
+      }
+
+      // Thumb Hover Scroll Bar
+      .Search-Result-Box::-webkit-scrollbar-thumb:hover{
+        background-color: #5e5e9e;
+        cursor: pointer;
+        transition: background-color ease-in-out 150ms;
+      }
+
+      // Thumb Active Scroll Bar
+      .Search-Result-Box::-webkit-scrollbar-thumb:active{
+        background-color: #7f7fd5;
+        transition: background-color ease-in-out 150ms;
+      }
     }
   }
 }

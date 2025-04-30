@@ -20,9 +20,9 @@ const GameList = () => {
         <GameCard
           key={game.id}
           id={game.id}
-          name={game.name}
-          genre={game.genre}
-          poster={game.poster}
+          name={game.Title}
+          genre={game.Genre}
+          poster={game.Banner}
           savegame={game.savegame}
           onSave={handleSave}
         />
