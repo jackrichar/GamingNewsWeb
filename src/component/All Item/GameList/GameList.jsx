@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import GameCard from "../cart/Cart";
-import gamesData from "../../Assets/jsone/Search.json";
+import gamesData from "../../../Assets/jsone/Search.json";
 import "./GameListe.scss";
 
 const GameList = () => {

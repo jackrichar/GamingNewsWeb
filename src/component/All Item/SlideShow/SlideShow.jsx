@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import slidesData from "../../Assets/jsone/Search.json";
+import slidesData from "../../../Assets/jsone/Search.json";
 import "./SlideShow.module.scss";
 
 const Slideshow = () => {

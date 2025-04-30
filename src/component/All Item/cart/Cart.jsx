@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Cart.scss";
-import { ReactComponent as FavouriteIcon } from "../../Assets/Icon/Favourite.svg";
+import { ReactComponent as FavouriteIcon } from "../../../Assets/Icon/Favourite.svg";
 
 const Cart = ({ id, name, genre, poster, savegame, onSave }) => {
   const [isSaved, setIsSaved] = useState(savegame); // برای مدیریت وضعیت دکمه
