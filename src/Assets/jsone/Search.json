@@ -5,6 +5,12 @@
     "Genre": "Action",
     "Poster": "https://i.ebayimg.com/images/g/WXcAAOSwq9NkOjJf/s-l1200.jpg",
     "Banner": "https://static1.squarespace.com/static/615dd9c46ea913604f68e0aa/615ddaca3a80a4746f9e7543/615ddaca3a80a4746f9e75cd/1657046751697/Project+Thumbnail+-+Batman+Arkham+Knight.jpg?format=1500w",
+    "Gallery": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRALAGiZrjftFhOaFILNoR7duLD1q9ITUdnZg&s",
+      "https://cdn.mos.cms.futurecdn.net/ec9b667f646f7007cc3207e2cf6bd9f1-1200-80.jpg",
+      "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/13076927/game-offline-Batman-Arkham-Knight-chinh-thuc-chao-ban-season-pass-02.0.0.1435849225.jpg?quality=90&strip=all&crop=0,3.4613147178592,100,93.077370564282",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJD3Rwj5ZKX2j-BYsoIffFWiEaZ_ZLxAeIvDS3W-dheS5Jr5l_M214ghoySL1OCLsxIkA&usqp=CAU"
+    ],
     "SaveGame": false
   },
   {
