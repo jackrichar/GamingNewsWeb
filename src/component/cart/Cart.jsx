@@ -11,6 +11,8 @@ const Cart = ({ id, name, genre, poster, savegame, onSave }) => {
       onSave(id); // تغییر savegame تو state کلی
       setIsSaved(true);
       onSave(id);
+    } else {
+      setIsSaved(false);
     }
   };
 

@@ -69,6 +69,7 @@
   .game-poster {
     filter: blur(2px);
     transition: 0.5s all;
+    transform: scale(1.1);
   }
   .game-name {
     opacity: 0;
