@@ -3,7 +3,7 @@ import "./HomePageStyle.scss";
 
 const HomePage = () => {
     return (
-        <div>
+        <div className="Home-Page-Background">
 
         </div>
     );

@@ -3,6 +3,7 @@ import "./AppStyle.scss";
 
 // Import Component
 import Navigation from "../component/navigation/Navigatin";
+import HomePage from "../component/HomePage/HomePage";
 import Cart from "../component/All Item/cart/Cart";
 import GameList from "../component/All Item/GameList/GameList";
 import Slideshow from "../component/All Item/SlideShow/SlideShow";
@@ -26,7 +27,7 @@ const App = () => {
               : { width: "calc(100% - 55px)" }
           }
         >
-
+          <HomePage />
         </div>
       </div>
     </>
