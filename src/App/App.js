@@ -7,6 +7,7 @@ import HomePage from "../component/HomePage/HomePage";
 import Cart from "../component/All Item/cart/Cart";
 import GameList from "../component/All Item/GameList/GameList";
 import Slideshow from "../component/All Item/SlideShow/SlideShow";
+import CartSlideShow from "../component/All Item/CartSlideShow/CartSlideShow";
 
 const App = () => {
   const [NavigationStatus, setNavigationStatus] = useState(false);
@@ -28,6 +29,8 @@ const App = () => {
           }
         >
           <Slideshow />
+          <CartSlideShow />
+          <GameList />
         </div>
       </div>
     </>

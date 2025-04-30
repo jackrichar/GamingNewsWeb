@@ -23,7 +23,7 @@ export default function Slideshow() {
       modules={[Navigation, Autoplay]}
       className={styles.mySwiper}
       autoplay={{
-        delay: 3000, // هر ۳ ثانیه اسلاید عوض می‌شه
+        delay: 30000, // هر ۳ ثانیه اسلاید عوض می‌شه
         disableOnInteraction: false,
       }}
       loop={true} // حلقه بی‌نهایت
@@ -33,13 +33,13 @@ export default function Slideshow() {
           <div
             className={styles.slide}
             style={{
-              backgroundImage: `url(${slide.Poster})`,
+              backgroundImage: `url(${slide.Banner})`,
             }}
           >
             <div className={styles.rating}>
-              <span>{slide.rating}</span>
+              <span>{slide.Rating}</span>
             </div>
-            <h2 className={styles.slideTitle}>{slide.name}</h2>
+            <h2 className={styles.slideTitle}>{slide.Title}</h2>
           </div>
         </SwiperSlide>
       ))}

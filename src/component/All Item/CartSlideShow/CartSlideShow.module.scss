@@ -1,0 +1,93 @@
+.game-card {
+    width: 100%;
+    height: 214px;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.5s all;
+    .game-name {
+      z-index: 999;
+      position: absolute;
+      top: 180px;
+      left: 10px;
+      opacity: 1;
+      user-select: none;
+      transition: 0.5s all;
+    }
+    .game-poster {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.5s all;
+    }
+    .game-info {
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      position: absolute;
+      opacity: 0;
+      border-radius: 15px;
+      transition: 0.5s all;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-direction: column;
+    }
+    .details-btn {
+      cursor: pointer;
+      height: 50px;
+      width: 50px;
+      background: none;
+      border-radius: 50%;
+      background-color: #302b3d;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-direction: column;
+    }
+    .favouriticon {
+      background: none;
+      width: 30px;
+      height: 30px;
+    }
+    .details-btn:active {
+      transform: scale(0.9);
+    }
+    .favouriticonActive {
+      fill: white;
+    }
+    .more-button {
+      background: #302b3d;
+      color: white;
+      width: 100px;
+      height: 20px;
+      border: none;
+      border-radius: 10px;
+    }
+    .more-button:hover {
+      cursor: pointer;
+    }
+    .more-button:active {
+      scale: 0.9;
+    }
+  }
+  .game-card:hover {
+    opacity: 1;
+    transition: 0.5s all;
+    .game-info {
+      opacity: 1;
+      transition: 0.5s all;
+    }
+    .game-poster {
+      filter: blur(2px);
+      transition: 0.5s all;
+      transform: scale(1.1);
+    }
+    .game-name {
+      opacity: 0;
+      transition: 0.5s all;
+    }
+  }
+  
