@@ -9,6 +9,8 @@ const Cart = ({ id, name, genre, poster, savegame, onSave }) => {
     if (!isSaved) {
       setIsSaved(true); // تغییر وضعیت دکمه
       onSave(id); // تغییر savegame تو state کلی
+      setIsSaved(true);
+      onSave(id);
     }
   };
 
@@ -22,8 +24,9 @@ const Cart = ({ id, name, genre, poster, savegame, onSave }) => {
           className={`details-btn ${isSaved ? "saved" : ""}`}
           onClick={handleClick}
         >
-          {isSaved ? "ذخیره شد" : "ذخیره"}
-          <FavouriteIcon className="favouriticon" />
+          <FavouriteIcon
+            className={`favouriticon ${isSaved ? "favouriticonActive" : ""}`}
+          />
         </button>
 
         <p>بیشتر</p>

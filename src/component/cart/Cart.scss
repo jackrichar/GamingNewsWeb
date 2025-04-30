@@ -55,6 +55,9 @@
   .details-btn:active {
     transform: scale(0.9);
   }
+  .favouriticonActive {
+    fill: white;
+  }
 }
 .game-card:hover {
   opacity: 1;
@@ -64,7 +67,7 @@
     transition: 0.5s all;
   }
   .game-poster {
-    filter: blur(1.5px);
+    filter: blur(2px);
     transition: 0.5s all;
   }
   .game-name {
