@@ -30,3 +30,25 @@ a:active {
   transform: scale(0.9);
 }
 
+/* کل اسکرول بار */
+.Search-Modal-Result-Box::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* پس زمینه اسکرول بار */
+.Search-Modal-Result-Box::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* دسته (همون بخش که کاربر میگیره و میکشه) */
+.Search-Modal-Result-Box::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* حالت هاور روی دسته */
+.Search-Modal-Result-Box::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
