@@ -25,8 +25,8 @@ const CartSlideShow = () => {
               margin: "20px auto",
               borderRadius: "8px",
               textAlign: "center",
-              width: "344px",
-              height: "214px",
+              width: "300px",
+              height: "400px",
             }}
           >
             <img
