@@ -5,6 +5,7 @@ import "./HomePageStyle.scss";
 import Slideshow from "../All Item/SlideShow/SlideShow";
 import GameList from "../All Item/GameList/GameList";
 import CartSlideShow from "../All Item/CartSlideShow/CartSlideShow";
+import CartSlideShowMobile from "../All Item/CartSlideShowMobile/CartSlideShowMobile";
 
 const HomePage = () => {
   return (
@@ -13,8 +14,11 @@ const HomePage = () => {
         <Slideshow />
       </div>
 
-      <div className="Home-Page-Cart-Slide-Show">
+      {/* <div className="Home-Page-Cart-Slide-Show">
         <CartSlideShow />
+      </div> */}
+      <div className="Home-Page-Cart-Slide-Show-Mobile">
+        <CartSlideShowMobile />
       </div>
 
       <div className="Home-Page-GameList">

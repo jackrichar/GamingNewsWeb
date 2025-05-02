@@ -31,6 +31,7 @@ const Cart = ({ id, name, genre, poster, savegame, onSave }) => {
           />
         </button>
       </div>
+
       <div className="game-info-More">
         <button className="more-button">بیشتر</button>
       </div>

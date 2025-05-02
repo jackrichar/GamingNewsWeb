@@ -14,4 +14,21 @@
     justify-content: center;
     overflow: hidden;
   }
+  .Home-Page-Cart-Slide-Show-Mobile {
+    display: none;
+  }
+}
+@media screen and (max-width: 520px) {
+  .Home-Page-Slide-Show {
+    display: none;
+  }
+  .Home-Page-Cart-Slide-Show-Mobile {
+    display: block;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
 }

@@ -4,18 +4,18 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import carts from "../../../Assets/jsone/Search.json";
 import { ReactComponent as FavouriteIcon } from "../../../Assets/Icon/Favourite.svg";
-import "./CartSlideShow.module.scss";
+import "./CartSlideShowMobile.scss";
 import React, { useState } from "react";
 
-const CartSlideShow = () => {
+const CartSlideShowMobile = () => {
   return (
     <Swiper
       modules={[Autoplay]}
       loop={true}
       autoplay={{ delay: 0, disableOnInteraction: false }}
       speed={3000}
-      slidesPerView={4}
-      spaceBetween={200}
+      slidesPerView={2}
+      spaceBetween={100}
       grabCursor={true}
     >
       {carts.map((slide) => (
@@ -51,4 +51,4 @@ const CartSlideShow = () => {
   );
 };
 
-export default CartSlideShow;
+export default CartSlideShowMobile;
