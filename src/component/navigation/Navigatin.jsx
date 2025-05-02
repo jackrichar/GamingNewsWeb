@@ -76,7 +76,7 @@ function Navigation({setNavigationStatus}) {
                       onClick={() => setOpenModal(true)}
                       className={`Navigation-Content-Select ${OpenModal ? 'Active-Select' : ''}`}>
                       <div className="NC-ICO">
-                          <SearchIcon className="Navigation-Icon"/>
+                          <SearchIcon className="Navigation-Icon" style={{rotate: "90deg"}}/>
                       </div>
                       <div className={`Icon-Title ${Open ? "Show-Navigation-Text" : "Hide-Navigation-Text"}`}>
                           <span>جستوجو</span>

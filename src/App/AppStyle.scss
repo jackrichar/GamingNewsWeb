@@ -43,7 +43,7 @@
 @media screen And (max-width: 520px) {
   .App-Background {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     flex-wrap: nowrap;
   }
 }

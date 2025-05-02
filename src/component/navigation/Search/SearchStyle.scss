@@ -1,6 +1,5 @@
 ///////////////////////////////////////////////////////////////
 // Active Modal
-
 @keyframes Open-Modal {
   0%{
     width: 0;
@@ -17,23 +16,26 @@
   }
 }
 
-.Modal-Active{
+.Modal-Active {
   display: flex !important;
 }
+
 ///////////////////////////////////////////////////////////////
 // Deactivate Modal
-
 .Modal-DeActive{
   display: none !important;
 }
+
 ////////////////////////////////////////////////////////////////
 .Change-Search-Box{
   border-radius: 10px 10px 0 0 !important;
 }
+
 .Show-Result-Box{
   visibility: visible !important;
   opacity: 1 !important;
 }
+
 ///////////////////////////////////////////////////////////////
 // Search Modal Style
 .Search-Modal-Background{
@@ -48,11 +50,14 @@
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(20px);
+  overflow-y: auto; /* اضافه شده برای پشتیبانی از اسکرول */
+  -webkit-overflow-scrolling: touch; /* برای اسکرول نرم روی iOS */
 
   .Search-Parent{
     position: relative;
     width: 30rem;
     height: auto;
+    max-height: 90vh;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -84,6 +89,8 @@
 
         }
 
+        position: relative;
+        z-index: 2;
         width: calc(100% - 50px);
         height: 100%;
         border-radius: 50px 0 0 50px;
@@ -151,12 +158,15 @@
     .Search-Result-Box-Background{
       position: absolute;
       width: 100%;
+      overflow: hidden;
       height: auto;
       top: 3.2em;
-      overflow: hidden;
       border-radius: 0 0 10px 10px;
 
       .Search-Result-Box{
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+        touch-action: pan-y pinch-zoom;
         direction: ltr;
         width: 100%;
         height: auto;
