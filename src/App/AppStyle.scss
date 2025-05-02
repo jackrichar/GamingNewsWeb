@@ -45,5 +45,16 @@
     display: flex;
     flex-direction: column-reverse;
     flex-wrap: nowrap;
+
+    .App-Navigation{
+      position: fixed !important;
+      right: 0 !important;
+      top: 90% !important;
+    }
+
+    .App-Content{
+      width: 100% !important;
+      height: calc(100% - 55px);
+    }
   }
 }
