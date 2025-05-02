@@ -10,7 +10,7 @@ import React, { useState } from "react";
 const CartSlideShow = () => {
   return (
     <Swiper
-      modules={[Autoplay]}
+      // modules={[Autoplay]}
       loop={true}
       autoplay={{ delay: 0, disableOnInteraction: false }}
       speed={3000}
@@ -21,6 +21,7 @@ const CartSlideShow = () => {
       {carts.map((slide) => (
         <SwiperSlide key={slide.id}>
           <div
+            className="game-card"
             style={{
               margin: "20px auto",
               borderRadius: "8px",
@@ -39,6 +40,10 @@ const CartSlideShow = () => {
                 borderRadius: "8px",
               }}
             />
+            <div className="container">
+            <FavouriteIcon className="favouriticon" />
+            <input className="More-Button" type="button"></input>
+            </div>
           </div>
         </SwiperSlide>
       ))}

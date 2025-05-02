@@ -9,15 +9,14 @@ import CartSlideShow from "../All Item/CartSlideShow/CartSlideShow";
 const HomePage = () => {
   return (
     <div className="Home-Page-Background">
-      <p>مهبوب ترین ها</p>
       <div className="Home-Page-Slide-Show">
         <Slideshow />
       </div>
-      <p>جدید ترین ها</p>
+
       <div className="Home-Page-Cart-Slide-Show">
         <CartSlideShow />
       </div>
-      <p>همه بازی ها</p>
+
       <div className="Home-Page-GameList">
         <GameList />
       </div>

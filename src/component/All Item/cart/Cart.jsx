@@ -30,7 +30,8 @@ const Cart = ({ id, name, genre, poster, savegame, onSave }) => {
             className={`favouriticon ${isSaved ? "favouriticonActive" : ""}`}
           />
         </button>
-
+      </div>
+      <div className="game-info-More">
         <button className="more-button">بیشتر</button>
       </div>
     </div>

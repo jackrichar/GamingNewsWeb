@@ -34,6 +34,20 @@
     justify-content: space-around;
     flex-direction: column;
   }
+  .game-info-More {
+    width: fit-content;
+    height: fit-content;
+    top: 80%;
+    right: 37%;
+    position: absolute;
+    opacity: 0;
+    border-radius: 15px;
+    transition: 0.5s all;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+  }
   .details-btn {
     cursor: pointer;
     height: 50px;
@@ -62,7 +76,7 @@
     background: #302b3d;
     color: white;
     width: 100px;
-    height: 20px;
+    height: 30px;
     border: none;
     border-radius: 10px;
   }
@@ -80,6 +94,7 @@
     opacity: 1;
     transition: 0.5s all;
   }
+
   .game-poster {
     filter: blur(2px);
     transition: 0.5s all;
@@ -87,6 +102,11 @@
   }
   .game-name {
     opacity: 0;
+    transition: 0.5s all;
+  }
+
+  .game-info-More {
+    opacity: 1;
     transition: 0.5s all;
   }
 }
