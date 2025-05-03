@@ -13,17 +13,16 @@ const HomePage = () => {
       <div className="Home-Page-Slide-Show">
         <Slideshow />
       </div>
+      {/*<div className="Home-Page-Cart-Slide-Show">*/}
+      {/*  <CartSlideShow />*/}
+      {/*</div>*/}
+      {/*<div className="Home-Page-Cart-Slide-Show-Mobile">*/}
+      {/*  <CartSlideShowMobile />*/}
+      {/*</div>*/}
 
-      {/* <div className="Home-Page-Cart-Slide-Show">
-        <CartSlideShow />
-      </div> */}
-      <div className="Home-Page-Cart-Slide-Show-Mobile">
-        <CartSlideShowMobile />
-      </div>
-
-      <div className="Home-Page-GameList">
-        <GameList />
-      </div>
+      {/*<div className="Home-Page-GameList">*/}
+      {/*  <GameList />*/}
+      {/*</div>*/}
     </div>
   );
 };

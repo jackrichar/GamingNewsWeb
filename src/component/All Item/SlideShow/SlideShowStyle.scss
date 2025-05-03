@@ -1,0 +1,80 @@
+.MySwiper {
+  width: 96% !important;
+  margin: 20px auto !important;
+  height: clamp(20vh, 30vh + 30vw, 94vh) !important;
+  position: relative !important;
+  overflow: hidden;
+  border-radius: 10px;
+
+  .Slide {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    }
+
+    .Rating {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+      border-radius: 50%;
+      justify-content: center;
+      font-size: 1.5rem;
+      background-color: #00ce7a;
+      color: black;
+    }
+
+    .SlideTitle {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      margin: 0;
+      font-size: clamp(1.2rem, 0.8rem + 0.9vw, 2rem);
+      font-weight: bold;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      z-index: 1;
+    }
+  }
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  &:after {
+    font-size: 20px;
+  }
+}
+
+@media screen And (max-width: 800px){
+  .MySwiper{
+    height: clamp(20vh, 20vh + 20vw, 94vh) !important;
+  }
+}
+
+@media screen And (max-width: 480px){
+  .MySwiper{
+    height: clamp(20vh, 20vh + 10vw, 94vh) !important;
+  }
+}

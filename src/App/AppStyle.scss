@@ -11,6 +11,7 @@
     stroke-width: 25px;
   }
   .App-Navigation {
+    z-index: 999999;
     width: auto;
     height: 100%;
   }
@@ -56,8 +57,6 @@
     .App-Content{
       width: 100% !important;
       height: calc(100% - 55px);
-      overflow-x: hidden;
-      overflow-y: scroll;
     }
   }
 }

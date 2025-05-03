@@ -14,32 +14,33 @@ import { Navigation, Autoplay } from "swiper/modules";
 import slidesData from "../../../Assets/jsone/Search.json";
 
 // Import custom styles
-import styles from "./SlideShow.module.scss";
+import "./SlideShowStyle.scss";
 
 export default function Slideshow() {
   return (
     <Swiper
       navigation={true}
       modules={[Navigation, Autoplay]}
-      className={styles.mySwiper}
+      className="MySwiper"
       autoplay={{
         delay: 30000, // هر ۳ ثانیه اسلاید عوض می‌شه
         disableOnInteraction: false,
       }}
+      spaceBetween={50}
       loop={true} // حلقه بی‌نهایت
     >
       {slidesData.map((slide) => (
         <SwiperSlide key={slide.id}>
           <div
-            className={styles.slide}
+            className="Slide"
             style={{
               backgroundImage: `url(${slide.Banner})`,
             }}
           >
-            <div className={styles.rating}>
+            <div className="Rating">
               <span>{slide.Rating}</span>
             </div>
-            <h2 className={styles.slideTitle}>{slide.Title}</h2>
+            <h2 className="SlideTitle">{slide.Title}</h2>
           </div>
         </SwiperSlide>
       ))}
