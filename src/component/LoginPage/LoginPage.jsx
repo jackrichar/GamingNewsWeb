@@ -4,7 +4,7 @@ import HomePage from "../HomePage/HomePage";
 function LoginPage() {
   return (
     <>
-      <HomePage />
+      <div>Login Page</div>
     </>
   );
 }

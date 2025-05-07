@@ -24,12 +24,9 @@ const App = () => {
             NavigationStatus ? "Open-App-Content" : "Close-App-Content"
           }`}
         >
-          <TestLinke />
           <Routes>
-            <Route
-              path="../component/LoginPage/LoginPage"
-              element={<LoginPage />}
-            />
+            <Route path="/" element={<HomePage />} />
+            <Route path="/LoginPage" element={<LoginPage />} />
           </Routes>
         </div>
       </div>
