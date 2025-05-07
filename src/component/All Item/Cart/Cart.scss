@@ -1,4 +1,4 @@
-.game-card {
+.Card-Slide-Show-Background {
   width: 100%;
   height: 214px;
   border-radius: 15px;
@@ -62,7 +62,7 @@
     flex-direction: column;
     position: relative;
   }
-  .favouriticon {
+  .Favourite-Icon {
     background: none;
     width: 30px;
     height: 30px;
@@ -88,7 +88,7 @@
     scale: 0.9;
   }
 }
-.game-card:hover {
+.Card-Slide-Show-Background:hover {
   opacity: 1;
   transition: 0.5s all;
   .game-info {

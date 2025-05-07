@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import GameCard from "../cart/Cart";
+import GameCard from "../Cart/Cart";
 import gamesData from "../../../Assets/jsone/Search.json";
 import "./GameListe.scss";
 
 const GameList = () => {
-  const [games, setGames] = useState(gamesData); // داده‌ها رو تو state می‌ریزیم
+  const [games, setGames] = useState(gamesData);
 
   const handleSave = (id) => {
     setGames((prevGames) =>

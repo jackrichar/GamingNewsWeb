@@ -1,53 +1,61 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/autoplay";
+import React, {useEffect, useState} from "react";
+
+// Import Data
 import carts from "../../../Assets/jsone/Search.json";
+
+// Swiper Component
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
+
+// Import Component
+import Card from './Card/Card';
+
+// Style
+import "./CartSlideShowStyle.scss";
+
+
+// Import SVG
 import { ReactComponent as FavouriteIcon } from "../../../Assets/Icon/Favourite.svg";
-import "./CartSlideShow.module.scss";
-import React, { useState } from "react";
+
 
 const CartSlideShow = () => {
   return (
-    <Swiper
-      modules={[Autoplay]}
-      loop={true}
-      autoplay={{ delay: 0, disableOnInteraction: false }}
-      speed={3000}
-      slidesPerView={4}
-      spaceBetween={200}
-      grabCursor={true}
-    >
-      {carts.map((slide) => (
-        <SwiperSlide key={slide.id}>
-          <div
-            className="game-card"
-            style={{
-              margin: "20px auto",
-              borderRadius: "8px",
-              textAlign: "center",
-              width: "300px",
-              height: "400px",
-            }}
-          >
-            <img
-              src={slide.Poster}
-              alt={slide.Title}
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                borderRadius: "8px",
-              }}
-            />
-            <div className="container">
-              <FavouriteIcon className="favouriticon" />
-              <input className="More-Button" type="button"></input>
-            </div>
-          </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+      <Swiper
+          loop={true}
+          grabCursor={true}
+          pagination={{
+            clickable: true,
+          }}
+          breakpoints={{
+            360: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 40,
+            }
+          }}
+          modules={[Pagination]}
+          className="mySwiper"
+      >
+        <SwiperSlide><Card/></SwiperSlide>
+        <SwiperSlide><Card/></SwiperSlide>
+        <SwiperSlide><Card/></SwiperSlide>
+        <SwiperSlide><Card/></SwiperSlide>
+        <SwiperSlide><Card/></SwiperSlide>
+        <SwiperSlide><Card/></SwiperSlide>
+      </Swiper>
   );
 };
 

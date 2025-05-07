@@ -17,7 +17,7 @@ const Cart = ({ id, name, genre, poster, savegame, onSave }) => {
   };
 
   return (
-    <div className="game-card">
+    <div className="Card-Slide-Show-Background">
       <img src={poster} alt={name} className="game-poster" />
       <h3 className="game-name">{name}</h3>
 
@@ -27,7 +27,7 @@ const Cart = ({ id, name, genre, poster, savegame, onSave }) => {
           onClick={handleClick}
         >
           <FavouriteIcon
-            className={`favouriticon ${isSaved ? "favouriticonActive" : ""}`}
+            className={`Favourite-Icon ${isSaved ? "favouriticonActive" : ""}`}
           />
         </button>
       </div>

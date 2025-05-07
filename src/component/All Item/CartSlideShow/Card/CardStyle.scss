@@ -1,0 +1,78 @@
+.Card-Background {
+  position: relative;
+  width: 14rem;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+
+  .Card-img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    object-position: center;
+    display: block;
+    border-radius: 10px;
+    transition: filter ease-in-out 150ms, scale ease-in-out 150ms;
+  }
+  .Card-img::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    transition: background-color ease-in-out 150ms;
+  }
+  .Card-Button{
+    position: absolute;
+    bottom: 20px;
+    right: 25%;
+    width: 7rem;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background: #1a1528;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity ease-in-out 150ms;
+
+    span{
+      font-family: var(--IranSansWeb), serif;
+      color: #ffffff;
+    }
+  }
+}
+
+.Card-Background:hover {
+  .Card-img{
+    cursor: auto;
+    filter: blur(5px);
+    scale: 1.2;
+  }
+  .Card-Button{
+    cursor: pointer;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity ease-in-out 150ms, background-color ease-in-out 150ms;
+  }
+  .Card-Button:hover{
+    background-color: #3e3e5e;
+    transition: background-color ease-in-out 150ms;
+  }
+  .Card-Button:active{
+    scale: 0.9;
+  }
+}
+
+.Card-Background:hover .Card-img::after {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+

@@ -23,7 +23,7 @@ export default function Slideshow() {
       modules={[Navigation, Autoplay]}
       className="MySwiper"
       autoplay={{
-        delay: 30000, // هر ۳ ثانیه اسلاید عوض می‌شه
+        delay: 3000, // هر ۳ ثانیه اسلاید عوض می‌شه
         disableOnInteraction: false,
       }}
       spaceBetween={50}
