@@ -26,13 +26,17 @@ const HomePage = () => {
               <CartSlideShow />
           </div>
       </div>
-      {/*<div className="Home-Page-Cart-Slide-Show-Mobile">*/}
-      {/*  <CartSlideShowMobile />*/}
-      {/*</div>*/}
-
-      {/*<div className="Home-Page-GameList">*/}
-      {/*  <GameList />*/}
-      {/*</div>*/}
+      <div className="Home-Page-Cart-Slide-Show">
+            <div className="Home-Page-Cart-Title">
+                <button>
+                    <ArrowIcon/>
+                </button>
+                <span>جدید ترین</span>
+            </div>
+            <div className="Home-Page-Card-Background">
+                <CartSlideShow />
+            </div>
+        </div>
     </div>
   );
 };
