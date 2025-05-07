@@ -18,7 +18,7 @@ import {ReactComponent as ProfileIcon} from "../../Assets/Icon/Profile.svg";
 
 function Navigation({setNavigationStatus}) {
 
-    const [selectedItem, setSelectedItem] = useState('');
+    const [selectedItem, setSelectedItem] = useState('Home');
 
     //////////////////////////////////////////////////////////////////////////////
 

@@ -15,12 +15,14 @@ import Card from './Card/Card';
 // Style
 import "./CartSlideShowStyle.scss";
 
+// Import Data
+import GameData from "../../../Assets/jsone/Search.json";
 
 // Import SVG
 import { ReactComponent as FavouriteIcon } from "../../../Assets/Icon/Favourite.svg";
 
 
-const CartSlideShow = () => {
+const CartSlideShow = ({CardNumber = 5}) => {
   return (
       <Swiper
           loop={true}
@@ -49,12 +51,15 @@ const CartSlideShow = () => {
           modules={[Pagination]}
           className="mySwiper"
       >
-        <SwiperSlide><Card/></SwiperSlide>
-        <SwiperSlide><Card/></SwiperSlide>
-        <SwiperSlide><Card/></SwiperSlide>
-        <SwiperSlide><Card/></SwiperSlide>
-        <SwiperSlide><Card/></SwiperSlide>
-        <SwiperSlide><Card/></SwiperSlide>
+        {
+          GameData.map((item, index) => {
+            if(index <= CardNumber){
+              return (
+                  <SwiperSlide key={index}><Card Poster={item.Poster}/></SwiperSlide>
+              )
+            }
+          })
+        }
       </Swiper>
   );
 };

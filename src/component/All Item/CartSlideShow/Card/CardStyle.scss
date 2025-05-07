@@ -1,7 +1,7 @@
 .Card-Background {
   position: relative;
   width: 14rem;
-  height: 100%;
+  height: 18em;
   border-radius: 10px;
   overflow: hidden;
 
@@ -13,6 +13,7 @@
     object-position: center;
     display: block;
     border-radius: 10px;
+
     transition: filter ease-in-out 150ms, scale ease-in-out 150ms;
   }
   .Card-img::after {
@@ -24,6 +25,7 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0);
     border-radius: 10px;
+
     transition: background-color ease-in-out 150ms;
   }
   .Card-Button{
