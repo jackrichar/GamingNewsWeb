@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "./AppStyle.scss";
-
+import { Route, Routes } from "react-router-dom";
 // Import Component
 import Navigation from "../component/navigation/Navigatin";
 import HomePage from "../component/HomePage/HomePage";
+import LoginPage from "../component/LoginPage/LoginPage";
+import TestLinke from "../component/TestLinke";
 
 const App = () => {
   const [NavigationStatus, setNavigationStatus] = useState(false);
@@ -22,7 +24,13 @@ const App = () => {
             NavigationStatus ? "Open-App-Content" : "Close-App-Content"
           }`}
         >
-          <HomePage />
+          <TestLinke />
+          <Routes>
+            <Route
+              path="../component/LoginPage/LoginPage"
+              element={<LoginPage />}
+            />
+          </Routes>
         </div>
       </div>
     </>
