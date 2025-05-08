@@ -7,7 +7,7 @@ import carts from "../../../Assets/jsone/Search.json";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 // Import Component
 import Card from './Card/Card';
@@ -22,9 +22,13 @@ import GameData from "../../../Assets/jsone/Search.json";
 import { ReactComponent as FavouriteIcon } from "../../../Assets/Icon/Favourite.svg";
 
 
-const CartSlideShow = ({CardNumber = 5}) => {
+const CartSlideShow = ({CardNumber = 5, Delay = 500}) => {
   return (
       <Swiper
+          autoplay={{
+              delay: Delay,
+              disableOnInteraction: false,
+          }}
           loop={true}
           grabCursor={true}
           pagination={{
@@ -48,7 +52,7 @@ const CartSlideShow = ({CardNumber = 5}) => {
               spaceBetween: 40,
             }
           }}
-          modules={[Pagination]}
+          modules={[Pagination, Autoplay]}
           className="mySwiper"
       >
         {
