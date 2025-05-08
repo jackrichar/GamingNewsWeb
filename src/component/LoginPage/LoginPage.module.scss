@@ -1,0 +1,134 @@
+// Login.module.scss
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+  
+    // Element: کانتینر فرم
+    &__container {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+  
+      // Element: تب‌ها (برای سوئیچ بین ورود و ثبت‌نام)
+      &__tabs {
+        display: flex;
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 20px;
+  
+        // Element: تب
+        &__tab {
+          flex: 1;
+          padding: 10px;
+          text-align: center;
+          cursor: pointer;
+          font-size: 16px;
+          color: #666;
+          background-color: #f9f9f9;
+          border: none;
+          border-radius: 4px 4px 0 0;
+  
+          &:hover {
+            background-color: #e0e0e0;
+          }
+  
+          // Modifier: تب فعال
+          &--active {
+            background-color: #007bff;
+            color: #ffffff;
+            font-weight: bold;
+          }
+        }
+      }
+  
+      // Element: فرم
+      &__form {
+        // Element: گروه فیلد
+        &__field {
+          margin-bottom: 20px;
+  
+          // Element: لیبل
+          &__label {
+            display: block;
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 8px;
+          }
+  
+          // Element: ورودی
+          &__input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+  
+            &:focus {
+              outline: none;
+              border-color: #007bff;
+              box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+            }
+          }
+        }
+  
+        // Element: پیام خطا
+        &__error {
+          color: #dc3545;
+          font-size: 14px;
+          margin-bottom: 15px;
+        }
+  
+        // Element: دکمه
+        &__button {
+          width: 100%;
+          padding: 12px;
+          background-color: #007bff;
+          color: #ffffff;
+          border: none;
+          border-radius: 4px;
+          font-size: 16px;
+          cursor: pointer;
+  
+          &:hover {
+            background-color: #0056b3;
+          }
+  
+          // Modifier: غیرفعال
+          &--disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+          }
+        }
+  
+        // Element: لینک
+        &__link {
+          display: block;
+          text-align: center;
+          margin-top: 15px;
+          color: #007bff;
+          text-decoration: none;
+          font-size: 14px;
+  
+          &:hover {
+            text-decoration: underline;
+          }
+  
+          // Modifier: فعال
+          &--active {
+            color: #0056b3;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  
+    // Modifier: حالت تاریک (مثال)
+    &--dark {
+      background-color: #333;
+    }
+  }

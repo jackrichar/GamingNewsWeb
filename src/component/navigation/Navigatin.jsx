@@ -100,7 +100,7 @@ function Navigation({ setNavigationStatus }) {
           <Search OpenModal={OpenModal} setOpenModal={setOpenModal} />
         </div>
         <div className="Navigation-Content-Icon">
-          <Link part="/">
+          <Link to="/">
             <button
               data-name="Home"
               className={`Navigation-Content-Select ${
