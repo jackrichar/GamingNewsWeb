@@ -3,10 +3,11 @@ import "./AppStyle.scss";
 import {Navigate, Route, Routes} from "react-router-dom";
 // Import Component
 import Navigation from "../component/navigation/Navigatin";
-import HomePage from "../component/HomePage/HomePage";
-import LoginPage from "../component/LoginPage/LoginPage";
 import NotFound from "../component/NotFound/NotFound";
 import LoadingPage from "../component/LoadingPage/LoadingPage";
+
+const HomePageLazy = React.lazy(() => import("../component/HomePage/HomePage"));
+const LoginPageLAzy = React.lazy(() => import("../component/LoginPage/LoginPage"));
 
 const App = () => {
   const [NavigationStatus, setNavigationStatus] = useState(false);
@@ -20,9 +21,9 @@ const App = () => {
           <Suspense fallback={<LoadingPage/>}>
             <Routes>
               <Route path="*" element={<NotFound />} />
-              <Route path="/" element={<HomePage />} />
+              <Route path="/" element={<HomePageLazy />} />
               <Route path="/Home" element={<Navigate to="/" />} />
-              <Route path="/AboutUs" element={<LoginPage />} />
+              <Route path="/AboutUs" element={<LoginPageLAzy />} />
             </Routes>
           </Suspense>
         </div>
