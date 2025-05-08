@@ -1,0 +1,158 @@
+// متغیرهای قابل تنظیم
+$primary-color: #ff6f61; // رنگ اصلی
+$secondary-color: #6b48ff; // رنگ ثانویه
+$glow-color: rgba(255, 255, 255, 0.8); // رنگ افکت گلو
+$animation-speed: 1.5s; // سرعت انیمیشن
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  100% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes text-glow {
+  0% {
+    text-shadow: 0 0 10px $primary-color;
+  }
+  50% {
+    text-shadow: 0 0 20px $primary-color, 0 0 30px $secondary-color;
+  }
+  100% {
+    text-shadow: 0 0 10px $primary-color;
+  }
+}
+
+.Loading-Page-Background{
+  width: 100%;
+  height: 100vh;
+  background-color: #0e0b22;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .loading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; // تمام صفحه
+    width: 100%;
+    background: linear-gradient(135deg, #1e1e2f, #2a2a4a); // پس‌زمینه گرادیانت
+    overflow: hidden;
+    .loader {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      .spinner {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 8px solid transparent;
+        border-top-color: $primary-color;
+        border-right-color: $secondary-color;
+        border-radius: 50%;
+        animation: spin $animation-speed infinite linear;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          bottom: 10px;
+          left: 10px;
+          border: 6px solid transparent;
+          border-left-color: $secondary-color;
+          border-bottom-color: $primary-color;
+          border-radius: 50%;
+          animation: spin $animation-speed * 1.5 infinite linear reverse;
+        }
+      }
+      .pulse {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 40px;
+        height: 40px;
+        background: radial-gradient(circle, $primary-color, transparent);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        animation: pulse $animation-speed * 2 infinite ease-in-out;
+      }
+      .glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 120px;
+        height: 120px;
+        background: $glow-color;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        filter: blur(20px);
+        opacity: 0.3;
+        animation: glow $animation-speed * 3 infinite ease-in-out;
+      }
+    }
+    .loading-text {
+      margin-top: 20px;
+      font-family: 'Vazir', sans-serif; // فونت دلخواه (می‌تونید تغییر بدید)
+      font-size: 1.5rem;
+      color: #fff;
+      text-shadow: 0 0 10px $primary-color;
+      animation: text-glow $animation-speed * 2 infinite ease-in-out;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .loader {
+    width: 80px;
+    height: 80px;
+  }
+
+  .pulse {
+    width: 30px;
+    height: 30px;
+  }
+
+  .glow {
+    width: 100px;
+    height: 100px;
+  }
+
+  .loading-text {
+    font-size: 1.2rem;
+  }
+}
