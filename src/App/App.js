@@ -6,6 +6,7 @@ import Navigation from "../component/navigation/Navigatin";
 import HomePage from "../component/HomePage/HomePage";
 import LoginPage from "../component/LoginPage/LoginPage";
 import TestLinke from "../component/TestLinke";
+import NotFound from "../component/NotFound/NotFound";
 
 const App = () => {
   const [NavigationStatus, setNavigationStatus] = useState(false);
@@ -25,8 +26,9 @@ const App = () => {
           }`}
         >
           <Routes>
+            <Route path="*" element={<NotFound />} />
             <Route path="/" element={<HomePage />} />
-            <Route path="/LoginPage" element={<LoginPage />} />
+            <Route path="/AboutUs" element={<LoginPage />} />
           </Routes>
         </div>
       </div>

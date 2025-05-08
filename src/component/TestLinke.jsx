@@ -5,7 +5,7 @@ function TestLinke() {
     <nav>
       <ul>
         <li>
-          <Link to="../component/LoginPage/LoginPage">تماس با ما</Link>
+          <Link to="/LoginPage">تماس با ما</Link>
         </li>
       </ul>
     </nav>
