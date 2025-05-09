@@ -4,13 +4,12 @@ import "./LoadingPageStyle.scss";
 const LoadingPage = () => {
     return (
         <div className="Loading-Page-Background">
-            <div className="loading-container">
-                <div className="loader">
-                    <div className="spinner"></div>
-                    <div className="pulse"></div>
-                    <div className="glow"></div>
+            <div className="Loading-Page">
+                <div className="Loader">
                 </div>
-                <h2 className="loading-text">در حال بارگذاری...</h2>
+                <div className="Loader-Text">
+                    <span>در حال بارگذاری</span>
+                </div>
             </div>
         </div>
     );
