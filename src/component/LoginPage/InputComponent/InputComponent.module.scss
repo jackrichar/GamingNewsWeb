@@ -13,9 +13,16 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1rem;
+    &:focus-visible {
+      border: green;
+    }
+    &:focus {
+      box-shadow: 0 0 10px 1px;
+    }
 
     &__error {
       border-color: red;
+      box-shadow: 0 0 10px 0px red;
     }
   }
 
