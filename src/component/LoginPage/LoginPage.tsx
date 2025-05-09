@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import InputComponent from "./InputComponent/InputComponent";
 import styles from "./LoginPage.module.scss";
+import LoggedInUsers from "../LoggedInUsers/LoggedInUsers";
 
 interface FormData {
   name: string;
@@ -15,7 +16,7 @@ interface User {
   password: string;
 }
 
-const AuthForm: React.FC = () => {
+const LoginPage: React.FC = () => {
   const [isLogin, setIsLogin] = useState<boolean>(true);
   const [formData, setFormData] = useState<FormData>({
     name: "",
@@ -29,7 +30,7 @@ const AuthForm: React.FC = () => {
     password: "",
     confirmPassword: "",
   });
-  const [currentUser, setCurrentUser] = useState<string | null>(null); // ذخیره ایمیل کاربر لاگین‌شده
+  const [currentUser, setCurrentUser] = useState<User | null>(null);
 
   const patterns = {
     name: /^[a-zA-Zآ-ی\s]{2,}$/,
@@ -37,13 +38,12 @@ const AuthForm: React.FC = () => {
     password: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/,
   };
 
-  // بررسی وضعیت لاگین هنگام بارگذاری کامپوننت
   useEffect(() => {
     const loggedInUsers = JSON.parse(
       localStorage.getItem("loggedInUsers") || "[]"
     );
     if (loggedInUsers.length > 0) {
-      setCurrentUser(loggedInUsers[0]); // فرض می‌کنیم فقط یک کاربر می‌تونه لاگین باشه
+      setCurrentUser(loggedInUsers[0]);
     }
   }, []);
 
@@ -101,18 +101,17 @@ const AuthForm: React.FC = () => {
           (u) => u.email === formData.email && u.password === formData.password
         );
         if (user) {
-          // اضافه کردن کاربر به لیست لاگین‌شده‌ها
           const loggedInUsers = JSON.parse(
             localStorage.getItem("loggedInUsers") || "[]"
           );
-          if (!loggedInUsers.includes(formData.email)) {
-            loggedInUsers.push(formData.email);
+          if (!loggedInUsers.some((u: User) => u.email === formData.email)) {
+            loggedInUsers.push(user);
             localStorage.setItem(
               "loggedInUsers",
               JSON.stringify(loggedInUsers)
             );
           }
-          setCurrentUser(formData.email);
+          setCurrentUser(user);
           alert(`خوش آمدید، ${user.name}!`);
           setFormData({
             name: "",
@@ -132,15 +131,14 @@ const AuthForm: React.FC = () => {
         const users: User[] = JSON.parse(localStorage.getItem("users") || "[]");
         users.push(newUser);
         localStorage.setItem("users", JSON.stringify(users));
-        // لاگین خودکار بعد از ثبت‌نام
         const loggedInUsers = JSON.parse(
           localStorage.getItem("loggedInUsers") || "[]"
         );
-        if (!loggedInUsers.includes(formData.email)) {
-          loggedInUsers.push(formData.email);
+        if (!loggedInUsers.some((u: User) => u.email === formData.email)) {
+          loggedInUsers.push(newUser);
           localStorage.setItem("loggedInUsers", JSON.stringify(loggedInUsers));
         }
-        setCurrentUser(formData.email);
+        setCurrentUser(newUser);
         alert("ثبت‌نام با موفقیت انجام شد!");
         setFormData({ name: "", email: "", password: "", confirmPassword: "" });
         setIsLogin(true);
@@ -153,7 +151,7 @@ const AuthForm: React.FC = () => {
       localStorage.getItem("loggedInUsers") || "[]"
     );
     const updatedUsers = loggedInUsers.filter(
-      (email: string) => email !== currentUser
+      (u: User) => u.email !== currentUser?.email
     );
     localStorage.setItem("loggedInUsers", JSON.stringify(updatedUsers));
     setCurrentUser(null);
@@ -168,101 +166,105 @@ const AuthForm: React.FC = () => {
   };
 
   return (
-    <div className={styles.AuthForm}>
-      {currentUser ? (
-        <div>
-          <h2 className={styles.AuthForm__title}>خوش آمدید!</h2>
-          <p>شما با ایمیل {currentUser} وارد شده‌اید.</p>
-          <button
-            type="button"
-            onClick={handleLogout}
-            className={styles.AuthForm__submit}
-          >
-            خروج
-          </button>
+    <>
+      <div className={styles.container}>
+        <div className={styles.AuthForm}>
+          {currentUser ? (
+            <div>
+              <h2 className={styles.AuthForm__title}>خوش آمدید!</h2>
+              <p>شما با ایمیل {currentUser.email} وارد شده‌اید.</p>
+              <button
+                type="button"
+                onClick={handleLogout}
+                className={styles.AuthForm__submit}
+              >
+                خروج
+              </button>
+            </div>
+          ) : (
+            <>
+              <h2 className={styles.AuthForm__title}>
+                {isLogin ? "ورود" : "ثبت‌نام"}
+              </h2>
+              <div className={styles.AuthForm__tabs}>
+                <button
+                  type="button"
+                  className={`${styles.AuthForm__tab} ${
+                    isLogin ? styles.AuthForm__tab__active : ""
+                  }`}
+                  onClick={() => setIsLogin(true)}
+                >
+                  ورود
+                </button>
+                <button
+                  type="button"
+                  className={`${styles.AuthForm__tab} ${
+                    !isLogin ? styles.AuthForm__tab__active : ""
+                  }`}
+                  onClick={() => setIsLogin(false)}
+                >
+                  ثبت‌نام
+                </button>
+              </div>
+              <form className={styles.AuthForm__form} onSubmit={handleSubmit}>
+                {!isLogin && (
+                  <InputComponent
+                    label="نام"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    error={errors.name}
+                    placeholder="نام خود را وارد کنید"
+                  />
+                )}
+                <InputComponent
+                  label="ایمیل"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  error={errors.email}
+                  placeholder="ایمیل خود را وارد کنید"
+                />
+                <InputComponent
+                  label="رمز عبور"
+                  name="password"
+                  type="password"
+                  value={formData.password}
+                  onChange={handleChange}
+                  error={errors.password}
+                  placeholder="رمز عبور خود را وارد کنید"
+                />
+                {!isLogin && (
+                  <InputComponent
+                    label="تأیید رمز عبور"
+                    name="confirmPassword"
+                    type="password"
+                    value={formData.confirmPassword}
+                    onChange={handleChange}
+                    error={errors.confirmPassword}
+                    placeholder="رمز عبور را دوباره وارد کنید"
+                  />
+                )}
+                <button type="submit" className={styles.AuthForm__submit}>
+                  {isLogin ? "ورود" : "ثبت‌نام"}
+                </button>
+              </form>
+              <p className={styles.AuthForm__toggle}>
+                {isLogin ? "حساب کاربری ندارید؟" : "قبلاً ثبت‌نام کرده‌اید؟"}
+                <button
+                  type="button"
+                  onClick={toggleForm}
+                  className={styles.AuthForm__toggleButton}
+                >
+                  {isLogin ? "ثبت‌نام کنید" : "وارد شوید"}
+                </button>
+              </p>
+            </>
+          )}
         </div>
-      ) : (
-        <>
-          <h2 className={styles.AuthForm__title}>
-            {isLogin ? "ورود" : "ثبت‌نام"}
-          </h2>
-          <div className={styles.AuthForm__tabs}>
-            <button
-              type="button"
-              className={`${styles.AuthForm__tab} ${
-                isLogin ? styles.AuthForm__tab__active : ""
-              }`}
-              onClick={() => setIsLogin(true)}
-            >
-              ورود
-            </button>
-            <button
-              type="button"
-              className={`${styles.AuthForm__tab} ${
-                !isLogin ? styles.AuthForm__tab__active : ""
-              }`}
-              onClick={() => setIsLogin(false)}
-            >
-              ثبت‌نام
-            </button>
-          </div>
-          <form className={styles.AuthForm__form} onSubmit={handleSubmit}>
-            {!isLogin && (
-              <InputComponent
-                label="نام"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                error={errors.name}
-                placeholder="نام خود را وارد کنید"
-              />
-            )}
-            <InputComponent
-              label="ایمیل"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              error={errors.email}
-              placeholder="ایمیل خود را وارد کنید"
-            />
-            <InputComponent
-              label="رمز عبور"
-              name="password"
-              type="password"
-              value={formData.password}
-              onChange={handleChange}
-              error={errors.password}
-              placeholder="رمز عبور خود را وارد کنید"
-            />
-            {!isLogin && (
-              <InputComponent
-                label="تأیید رمز عبور"
-                name="confirmPassword"
-                type="password"
-                value={formData.confirmPassword}
-                onChange={handleChange}
-                error={errors.confirmPassword}
-                placeholder="رمز عبور را دوباره وارد کنید"
-              />
-            )}
-            <button type="submit" className={styles.AuthForm__submit}>
-              {isLogin ? "ورود" : "ثبت‌نام"}
-            </button>
-          </form>
-          <p className={styles.AuthForm__toggle}>
-            {isLogin ? "حساب کاربری ندارید؟" : "قبلاً ثبت‌نام کرده‌اید؟"}
-            <button
-              type="button"
-              onClick={toggleForm}
-              className={styles.AuthForm__toggleButton}
-            >
-              {isLogin ? "ثبت‌نام کنید" : "وارد شوید"}
-            </button>
-          </p>
-        </>
-      )}
-    </div>
+      </div>
+    </>
   );
 };
 
-export default AuthForm;
+export default LoginPage;
