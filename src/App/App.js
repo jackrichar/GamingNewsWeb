@@ -5,7 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import Navigation from "../component/navigation/Navigatin";
 import HomePage from "../component/HomePage/HomePage";
 import LoginPage from "../component/LoginPage/LoginPage";
-import TestLinke from "../component/TestLinke";
+
 import NotFound from "../component/NotFound/NotFound";
 
 const App = () => {
@@ -28,7 +28,7 @@ const App = () => {
           <Routes>
             <Route path="*" element={<NotFound />} />
             <Route path="/" element={<HomePage />} />
-            <Route path="/AboutUs" element={<LoginPage />} />
+            <Route path="/LoginPage" element={<LoginPage />} />
           </Routes>
         </div>
       </div>
