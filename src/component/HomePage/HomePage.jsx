@@ -6,8 +6,8 @@ import { ReactComponent as ArrowIcon } from "../../Assets/Icon/ArrowV2.svg";
 
 // Import Component
 import Slideshow from "../All Item/SlideShow/SlideShow";
-import GameList from "../All Item/GameList/GameList";
 import CartSlideShow from "../All Item/CartSlideShow/CartSlideShow";
+import GameList from "../All Item/GameList/GameList";
 
 const HomePage = () => {
   return (

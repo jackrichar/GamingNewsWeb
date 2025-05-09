@@ -1,35 +1,34 @@
-import React, { useState } from "react";
+import React, {Suspense, useState} from "react";
 import "./AppStyle.scss";
-import { Route, Routes } from "react-router-dom";
+import {Navigate, Route, Routes} from "react-router-dom";
 // Import Component
 import Navigation from "../component/navigation/Navigatin";
 import HomePage from "../component/HomePage/HomePage";
 import LoginPage from "../component/LoginPage/LoginPage";
 
 import NotFound from "../component/NotFound/NotFound";
+import LoadingPage from "../component/LoadingPage/LoadingPage";
+
+const HomePageLazy = React.lazy(() => import("../component/HomePage/HomePage"));
+const LoginPageLAzy = React.lazy(() => import("../component/LoginPage/LoginPage"));
 
 const App = () => {
   const [NavigationStatus, setNavigationStatus] = useState(false);
   return (
     <>
       <div className="App-Background">
-        <div
-          className={`App-Navigation  ${
-            NavigationStatus ? "Open-App-Navigation" : "Close-App-Navigation"
-          }`}
-        >
+        <div className={`App-Navigation  ${NavigationStatus ? "Open-App-Navigation" : "Close-App-Navigation"}`}>
           <Navigation setNavigationStatus={setNavigationStatus} />
         </div>
-        <div
-          className={`App-Content  ${
-            NavigationStatus ? "Open-App-Content" : "Close-App-Content"
-          }`}
-        >
-          <Routes>
-            <Route path="*" element={<NotFound />} />
-            <Route path="/" element={<HomePage />} />
-            <Route path="/LoginPage" element={<LoginPage />} />
-          </Routes>
+        <div className={`App-Content  ${NavigationStatus ? "Open-App-Content" : "Close-App-Content"}`}>
+          <Suspense fallback={<LoadingPage/>}>
+            <Routes>
+              <Route path="*" element={<NotFound />} />
+              <Route path="/" element={<HomePageLazy />} />
+              <Route path="/Home" element={<Navigate to="/" />} />
+              <Route path="/AboutUs" element={<LoginPageLAzy />} />
+            </Routes>
+          </Suspense>
         </div>
       </div>
     </>
