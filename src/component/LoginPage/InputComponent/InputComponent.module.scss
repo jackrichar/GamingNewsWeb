@@ -1,0 +1,28 @@
+.InputComponent {
+  margin-bottom: 1rem;
+
+  &__label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+
+    &__error {
+      border-color: red;
+    }
+  }
+
+  &__error {
+    color: red;
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 0.25rem;
+  }
+}
