@@ -3,18 +3,21 @@
   height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center;
+  overflow: auto;
   * {
     font-family: "IranSans";
   }
   .AuthForm {
-    margin: auto;
+    margin: 10px;
     background: white;
     padding: 0.5rem 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     width: 400px;
-    height: 100%;
+    height: auto;
     color: black;
+
     &__title {
       text-align: center;
       margin-bottom: 1rem;
