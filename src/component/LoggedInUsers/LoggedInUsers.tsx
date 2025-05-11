@@ -1,17 +1,46 @@
 import React, { useEffect, useState } from "react";
 import styles from "./LoggedInUsers.module.scss";
+import Swal from "sweetalert2";
 
 interface User {
   name: string;
   email: string;
   password: string;
 }
+
 const LoggedInUsers: React.FC = () => {
   const [loggedInUsers, setLoggedInUsers] = useState<User[]>([]);
 
-  useEffect(() => {
+  // تابع برای به‌روزرسانی لیست کاربران
+  const updateLoggedInUsers = () => {
     const users = JSON.parse(localStorage.getItem("loggedInUsers") || "[]");
     setLoggedInUsers(users);
+  };
+
+  useEffect(() => {
+    // بارگذاری اولیه کاربران
+    updateLoggedInUsers();
+
+    // listener برای تغییرات localStorage در تب‌های دیگر
+    const handleStorageChange = (event: StorageEvent) => {
+      if (event.key === "loggedInUsers") {
+        updateLoggedInUsers();
+      }
+    };
+
+    // listener برای تغییرات در همان تب
+    const handleCustomStorageUpdate = () => {
+      updateLoggedInUsers();
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+    window.addEventListener("storageUpdate", handleCustomStorageUpdate);
+
+    // پاک‌سازی event listenerها
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+      window.removeEventListener("storageUpdate", handleCustomStorageUpdate);
+    };
   }, []);
 
   const handleDeleteUser = (email: string) => {
@@ -29,9 +58,19 @@ const LoggedInUsers: React.FC = () => {
     );
     localStorage.setItem("users", JSON.stringify(updatedAllUsers));
 
-    alert(`کاربر با ایمیل ${email} با موفقیت حذف شد!`);
+    // ارسال رویداد سفارشی
+    const event = new Event("storageUpdate");
+    window.dispatchEvent(event);
+
+    Swal.fire({
+      title: `کاربر با ایمیل ${email} با موفقیت حذف شد!`,
+      icon: "success",
+      confirmButtonText: "باشه",
+      customClass: {
+        confirmButton: "my-swal-button",
+      },
+    });
   };
-  console.log(localStorage.users);
 
   return (
     <div className={styles.LoggedInUsers}>

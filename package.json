@@ -32,6 +32,7 @@
     "sass-loader": "^16.0.5",
     "slick-carousel": "^1.8.1",
     "style-loader": "^4.0.0",
+    "sweetalert2": "^11.21.0",
     "swiper": "^11.2.6",
     "typescript": "^5.8.3",
     "web-vitals": "^2.1.4"

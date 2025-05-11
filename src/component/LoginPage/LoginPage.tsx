@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import InputComponent from "./InputComponent/InputComponent";
 import styles from "./LoginPage.module.scss";
+import Swal from "sweetalert2";
 import LoggedInUsers from "../LoggedInUsers/LoggedInUsers";
 
 interface FormData {
@@ -81,6 +82,12 @@ const LoginPage: React.FC = () => {
     return "";
   };
 
+  const dispatchStorageUpdate = () => {
+    // ارسال رویداد سفارشی برای به‌روزرسانی در همان تب
+    const event = new Event("storageUpdate");
+    window.dispatchEvent(event);
+  };
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const newErrors = {
@@ -110,9 +117,17 @@ const LoginPage: React.FC = () => {
               "loggedInUsers",
               JSON.stringify(loggedInUsers)
             );
+            dispatchStorageUpdate(); // ارسال رویداد
           }
           setCurrentUser(user);
-          alert(`خوش آمدید، ${user.name}!`);
+          Swal.fire({
+            title: `خوش آمدید، ${user.name}!`,
+            icon: "success",
+            confirmButtonText: "باشه",
+            customClass: {
+              confirmButton: "my-swal-button",
+            },
+          });
           setFormData({
             name: "",
             email: "",
@@ -137,9 +152,17 @@ const LoginPage: React.FC = () => {
         if (!loggedInUsers.some((u: User) => u.email === formData.email)) {
           loggedInUsers.push(newUser);
           localStorage.setItem("loggedInUsers", JSON.stringify(loggedInUsers));
+          dispatchStorageUpdate(); // ارسال رویداد
         }
         setCurrentUser(newUser);
-        alert("ثبت‌نام با موفقیت انجام شد!");
+        Swal.fire({
+          title: "ثبت‌نام با موفقیت انجام شد!",
+          icon: "success",
+          confirmButtonText: "باشه",
+          customClass: {
+            confirmButton: "my-swal-button",
+          },
+        });
         setFormData({ name: "", email: "", password: "", confirmPassword: "" });
         setIsLogin(true);
       }
@@ -154,9 +177,17 @@ const LoginPage: React.FC = () => {
       (u: User) => u.email !== currentUser?.email
     );
     localStorage.setItem("loggedInUsers", JSON.stringify(updatedUsers));
+    dispatchStorageUpdate(); // ارسال رویداد
     setCurrentUser(null);
     setFormData({ name: "", email: "", password: "", confirmPassword: "" });
-    alert("شما با موفقیت خارج شدید!");
+    Swal.fire({
+      title: "شما با موفقیت خارج شدید!",
+      icon: "info",
+      confirmButtonText: "باشه",
+      customClass: {
+        confirmButton: "my-swal-button",
+      },
+    });
   };
 
   const toggleForm = () => {
@@ -263,6 +294,7 @@ const LoginPage: React.FC = () => {
           )}
         </div>
       </div>
+      <LoggedInUsers />
     </>
   );
 };
