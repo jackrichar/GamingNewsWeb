@@ -1,7 +1,7 @@
 import React from 'react';
-import './NotFoundStyle.scss';
+import './NotFoundPageStyle.scss';
 
-function NotFound() {
+function NotFoundPage() {
     return (
         <div className="not-found-container">
             <div className="wrap">
@@ -58,4 +58,4 @@ function NotFound() {
     );
 }
 
-export default NotFound;
+export default NotFoundPage;

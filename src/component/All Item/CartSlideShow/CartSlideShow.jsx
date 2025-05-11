@@ -18,10 +18,6 @@ import "./CartSlideShowStyle.scss";
 // Import Data
 import GameData from "../../../Assets/jsone/Search.json";
 
-// Import SVG
-import { ReactComponent as FavouriteIcon } from "../../../Assets/Icon/Favourite.svg";
-
-
 const CartSlideShow = ({CardNumber = 5, Delay = 500}) => {
   return (
       <Swiper
