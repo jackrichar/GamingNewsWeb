@@ -1,6 +1,8 @@
 import React from 'react';
 import "./CardStyle.scss";
 
+// import NotLoadingImagePoster from "../../../../Assets/image/NotLoadImagePoster.png";
+
 const Card = ({Poster}) =>{
     return(
         <div className="Card-Background">

@@ -20,7 +20,7 @@ function Navigation({ setNavigationStatus }) {
   const location = useLocation();
   const PathTitles = {
     "/": "Home",
-    "/AllGames": "AllGames",
+    "/Archive": "Archive",
     "/AboutUs": "AboutUs",
     "/Profile": "Profile",
   };
@@ -66,7 +66,6 @@ function Navigation({ setNavigationStatus }) {
 
     if (target) {
       const name = target.dataset.name;
-      console.log(name);
       setSelectedItem(name);
     }
   };
@@ -137,12 +136,12 @@ function Navigation({ setNavigationStatus }) {
             ) : null}
           </div>
         </Link>
-        <Link className="Navigation-Content-Link" to="/AllGames">
+        <Link className="Navigation-Content-Link" to="/Archive">
           <div className="Navigation-Content-Icon">
             <button
-              data-name="AllGames"
+              data-name="Archive"
               className={`Navigation-Content-Select ${
-                CurrentPath === "AllGames" ? "Active-Select" : ""
+                CurrentPath === "Archive" ? "Active-Select" : ""
               }`}
             >
               <div className="NC-ICO">
@@ -189,7 +188,7 @@ function Navigation({ setNavigationStatus }) {
             ) : null}
           </div>
         </Link>
-        <Link className="Navigation-Content-Link" to="/LoginPage">
+        <Link className="Navigation-Content-Link" to="/Profile">
           <div className="Navigation-Content-Icon">
             <button
               data-name="Profile"

@@ -16,6 +16,8 @@ import slidesData from "../../../Assets/jsone/Search.json";
 // Import custom styles
 import "./SlideShowStyle.scss";
 
+import NotLoadingImageSlideShow from "../../../Assets/image/NotLoadingImageSlideShow.png";
+
 export default function Slideshow() {
   return (
     <Swiper
