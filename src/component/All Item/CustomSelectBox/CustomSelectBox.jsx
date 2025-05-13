@@ -33,7 +33,7 @@ const CustomSelectBox = ({
     setMultipleValue(updatedSelection);
     onChange(updatedSelection);
   };
-  console.log(MultipleValue);
+
   useEffect(() => {
     function handleClickOutside(event) {
       if (ClickOut.current && !ClickOut.current.contains(event.target)) {
