@@ -1,0 +1,72 @@
+.game-details {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+
+  .back-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #007bff;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .game-banner {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  h2 {
+    margin: 20px 0;
+  }
+
+  p {
+    margin: 10px 0;
+  }
+
+  .game-gallery {
+    margin-top: 20px;
+
+    h3 {
+      margin-bottom: 10px;
+    }
+
+    .gallery-images {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+.game-not-found {
+  text-align: center;
+  padding: 50px;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  a {
+    color: #007bff;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

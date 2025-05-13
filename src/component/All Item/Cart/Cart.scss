@@ -35,10 +35,9 @@
     flex-direction: column;
   }
   .game-info-More {
-    width: fit-content;
-    height: fit-content;
+    width: 100%;
     top: 80%;
-    right: 37%;
+    right: 0;
     position: absolute;
     opacity: 0;
     border-radius: 15px;

@@ -1,19 +1,14 @@
 import React, { useState } from "react";
 import "./Cart.scss";
 import { ReactComponent as FavouriteIcon } from "../../../Assets/Icon/Favourite.svg";
+import { Link } from "react-router-dom";
 
 const Cart = ({ id, name, genre, poster, savegame, onSave }) => {
-  const [isSaved, setIsSaved] = useState(savegame); // برای مدیریت وضعیت دکمه
+  const [isSaved, setIsSaved] = useState(savegame);
 
-  const handleClick = () => {
-    if (!isSaved) {
-      setIsSaved(true); // تغییر وضعیت دکمه
-      onSave(id); // تغییر savegame تو state کلی
-      setIsSaved(true);
-      onSave(id);
-    } else {
-      setIsSaved(false);
-    }
+  const handleSaveClick = () => {
+    setIsSaved(!isSaved);
+    onSave(id);
   };
 
   return (
@@ -24,7 +19,7 @@ const Cart = ({ id, name, genre, poster, savegame, onSave }) => {
       <div className="game-info">
         <button
           className={`details-btn ${isSaved ? "saved" : ""}`}
-          onClick={handleClick}
+          onClick={handleSaveClick}
         >
           <FavouriteIcon
             className={`Favourite-Icon ${isSaved ? "favouriticonActive" : ""}`}
@@ -32,8 +27,14 @@ const Cart = ({ id, name, genre, poster, savegame, onSave }) => {
         </button>
       </div>
 
+      <div className="game-information">
+        <p className="game-genre">{genre}</p>
+      </div>
+
       <div className="game-info-More">
-        <button className="more-button">بیشتر</button>
+        <Link to={`/game/${id}`}>
+          <button className="more-button">بیشتر</button>
+        </Link>
       </div>
     </div>
   );
