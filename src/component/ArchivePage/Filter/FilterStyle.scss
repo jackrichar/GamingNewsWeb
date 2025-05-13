@@ -2,16 +2,16 @@
   width: 100%;
   height: 45px;
   display: flex;
-  border-radius: 10px;
-  background-color: #1a1528;
   .Archive-Page-Filter{
-    width: 100%;
+    width: auto;
     height: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     padding: 0 10px;
+    border-radius: 10px;
+    background-color: #1a1528;
     .Archive-Page-Filter-Logo{
       width: 30px;
       height: 30px;
@@ -26,6 +26,7 @@
       }
     }
     .Archive-Page-Filter-Item{
+      margin-right: 10px;
       .Archive-Page-Filter-Item-Button{
         width: 100%;
         height: 40px;
