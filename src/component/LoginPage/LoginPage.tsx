@@ -256,26 +256,28 @@ const LoginPage: React.FC = () => {
                   error={errors.email}
                   placeholder="ایمیل خود را وارد کنید"
                 />
-                <InputComponent
-                  label="رمز عبور"
-                  name="password"
-                  type="password"
-                  value={formData.password}
-                  onChange={handleChange}
-                  error={errors.password}
-                  placeholder="رمز عبور خود را وارد کنید"
-                />
-                {!isLogin && (
+                <div className={!isLogin ? styles.AuthForm__password : ""}>
                   <InputComponent
-                    label="تأیید رمز عبور"
-                    name="confirmPassword"
+                    label="رمز عبور"
+                    name="password"
                     type="password"
-                    value={formData.confirmPassword}
+                    value={formData.password}
                     onChange={handleChange}
-                    error={errors.confirmPassword}
-                    placeholder="رمز عبور را دوباره وارد کنید"
+                    error={errors.password}
+                    placeholder="رمز عبور خود را وارد کنید"
                   />
-                )}
+                  {!isLogin && (
+                    <InputComponent
+                      label="تأیید رمز عبور"
+                      name="confirmPassword"
+                      type="password"
+                      value={formData.confirmPassword}
+                      onChange={handleChange}
+                      error={errors.confirmPassword}
+                      placeholder="رمز عبور را دوباره وارد کنید"
+                    />
+                  )}
+                </div>
                 <button type="submit" className={styles.AuthForm__submit}>
                   {isLogin ? "ورود" : "ثبت‌نام"}
                 </button>
@@ -294,7 +296,6 @@ const LoginPage: React.FC = () => {
           )}
         </div>
       </div>
-      <LoggedInUsers />
     </>
   );
 };
