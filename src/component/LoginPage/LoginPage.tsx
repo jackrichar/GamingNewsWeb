@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import InputComponent from "./InputComponent/InputComponent";
 import styles from "./LoginPage.module.scss";
 import Swal from "sweetalert2";
-import LoggedInUsers from "../LoggedInUsers/LoggedInUsers";
 
 interface FormData {
   name: string;
@@ -51,6 +50,15 @@ const LoginPage: React.FC = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+
+    // اعتبارسنجی real-time فقط برای فیلدهای مرتبط
+    const fieldsToValidate = isLogin
+      ? ["email", "password"]
+      : ["name", "email", "password", "confirmPassword"];
+    if (fieldsToValidate.includes(name)) {
+      const error = validateField(name, value, { ...formData, [name]: value });
+      setErrors((prev) => ({ ...prev, [name]: error }));
+    }
   };
 
   const validateField = (
@@ -76,28 +84,37 @@ const LoginPage: React.FC = () => {
     if (name === "password" && value && !patterns.password.test(value)) {
       return "رمز عبور باید حداقل ۸ کاراکتر، شامل حرف بزرگ، کوچک و عدد باشد";
     }
-    if (name === "confirmPassword" && value !== formData.password) {
+    if (name === "confirmPassword" && value && value !== formData.password) {
       return "تأیید رمز عبور با رمز عبور مطابقت ندارد";
     }
     return "";
   };
 
   const dispatchStorageUpdate = () => {
-    // ارسال رویداد سفارشی برای به‌روزرسانی در همان تب
     const event = new Event("storageUpdate");
     window.dispatchEvent(event);
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const newErrors = {
-      name: isLogin ? "" : validateField("name", formData.name, formData),
-      email: validateField("email", formData.email, formData),
-      password: validateField("password", formData.password, formData),
-      confirmPassword: isLogin
-        ? ""
-        : validateField("confirmPassword", formData.confirmPassword, formData),
+    const fieldsToValidate = isLogin
+      ? ["email", "password"]
+      : ["name", "email", "password", "confirmPassword"];
+
+    const newErrors: FormData = {
+      name: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
     };
+
+    fieldsToValidate.forEach((field) => {
+      newErrors[field as keyof FormData] = validateField(
+        field,
+        formData[field as keyof FormData],
+        formData
+      );
+    });
 
     setErrors(newErrors);
 
@@ -117,7 +134,7 @@ const LoginPage: React.FC = () => {
               "loggedInUsers",
               JSON.stringify(loggedInUsers)
             );
-            dispatchStorageUpdate(); // ارسال رویداد
+            dispatchStorageUpdate();
           }
           setCurrentUser(user);
           Swal.fire({
@@ -135,7 +152,10 @@ const LoginPage: React.FC = () => {
             confirmPassword: "",
           });
         } else {
-          setErrors({ ...errors, email: "ایمیل یا رمز عبور اشتباه است" });
+          setErrors((prev) => ({
+            ...prev,
+            email: "ایمیل یا رمز عبور اشتباه است",
+          }));
         }
       } else {
         const newUser: User = {
@@ -152,7 +172,7 @@ const LoginPage: React.FC = () => {
         if (!loggedInUsers.some((u: User) => u.email === formData.email)) {
           loggedInUsers.push(newUser);
           localStorage.setItem("loggedInUsers", JSON.stringify(loggedInUsers));
-          dispatchStorageUpdate(); // ارسال رویداد
+          dispatchStorageUpdate();
         }
         setCurrentUser(newUser);
         Swal.fire({
@@ -177,7 +197,7 @@ const LoginPage: React.FC = () => {
       (u: User) => u.email !== currentUser?.email
     );
     localStorage.setItem("loggedInUsers", JSON.stringify(updatedUsers));
-    dispatchStorageUpdate(); // ارسال رویداد
+    dispatchStorageUpdate();
     setCurrentUser(null);
     setFormData({ name: "", email: "", password: "", confirmPassword: "" });
     Swal.fire({
@@ -192,71 +212,68 @@ const LoginPage: React.FC = () => {
 
   const toggleForm = () => {
     setIsLogin(!isLogin);
+    // پاک کردن خطاها و داده‌ها برای حالت جدید
     setErrors({ name: "", email: "", password: "", confirmPassword: "" });
     setFormData({ name: "", email: "", password: "", confirmPassword: "" });
   };
 
   return (
-    <>
-      <div className={styles.container}>
-        <div className={styles.AuthForm}>
-          {currentUser ? (
-            <div>
-              <h2 className={styles.AuthForm__title}>خوش آمدید!</h2>
-              <p>شما با ایمیل {currentUser.email} وارد شده‌اید.</p>
+    <div className={styles.container}>
+      <div className={styles.AuthForm}>
+        {currentUser ? (
+          <div>
+            <h2 className={styles.AuthForm__title}>خوش آمدید!</h2>
+            <p>شما با ایمیل {currentUser.email} وارد شده‌اید.</p>
+            <button
+              type="button"
+              onClick={handleLogout}
+              className={styles.AuthForm__submit}
+            >
+              خروج
+            </button>
+          </div>
+        ) : (
+          <>
+            <h2 className={styles.AuthForm__title}>
+              {isLogin ? "ورود" : "ثبت‌نام"}
+            </h2>
+            <div className={styles.AuthForm__tabs}>
               <button
                 type="button"
-                onClick={handleLogout}
-                className={styles.AuthForm__submit}
+                className={`${styles.AuthForm__tab} ${isLogin ? styles.AuthForm__tab__active : ""}`}
+                onClick={() => setIsLogin(true)}
               >
-                خروج
+                ورود
+              </button>
+              <button
+                type="button"
+                className={`${styles.AuthForm__tab} ${!isLogin ? styles.AuthForm__tab__active : ""}`}
+                onClick={() => setIsLogin(false)}
+              >
+                ثبت‌نام
               </button>
             </div>
-          ) : (
-            <>
-              <h2 className={styles.AuthForm__title}>
-                {isLogin ? "ورود" : "ثبت‌نام"}
-              </h2>
-              <div className={styles.AuthForm__tabs}>
-                <button
-                  type="button"
-                  className={`${styles.AuthForm__tab} ${
-                    isLogin ? styles.AuthForm__tab__active : ""
-                  }`}
-                  onClick={() => setIsLogin(true)}
-                >
-                  ورود
-                </button>
-                <button
-                  type="button"
-                  className={`${styles.AuthForm__tab} ${
-                    !isLogin ? styles.AuthForm__tab__active : ""
-                  }`}
-                  onClick={() => setIsLogin(false)}
-                >
-                  ثبت‌نام
-                </button>
-              </div>
-              <form className={styles.AuthForm__form} onSubmit={handleSubmit}>
-                {!isLogin && (
-                  <InputComponent
-                    label="نام"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    error={errors.name}
-                    placeholder="نام خود را وارد کنید"
-                  />
-                )}
+            <form className={styles.AuthForm__form} onSubmit={handleSubmit}>
+              {!isLogin && (
                 <InputComponent
-                  label="ایمیل"
-                  name="email"
-                  value={formData.email}
+                  label="نام"
+                  name="name"
+                  value={formData.name}
                   onChange={handleChange}
-                  error={errors.email}
-                  placeholder="ایمیل خود را وارد کنید"
+                  error={errors.name}
+                  placeholder="نام خود را وارد کنید"
                 />
-                <div className={!isLogin ? styles.AuthForm__password : ""}>
+              )}
+              <InputComponent
+                label="ایمیل"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                error={errors.email}
+                placeholder="ایمیل خود را وارد کنید"
+              />
+              <div className={!isLogin ? styles.AuthForm__password : ""}>
+                <div className={!isLogin ? styles.AuthForm__flexInput : ""}>
                   <InputComponent
                     label="رمز عبور"
                     name="password"
@@ -266,7 +283,9 @@ const LoginPage: React.FC = () => {
                     error={errors.password}
                     placeholder="رمز عبور خود را وارد کنید"
                   />
-                  {!isLogin && (
+                </div>
+                {!isLogin && (
+                  <div className={styles.AuthForm__flexInput}>
                     <InputComponent
                       label="تأیید رمز عبور"
                       name="confirmPassword"
@@ -276,27 +295,27 @@ const LoginPage: React.FC = () => {
                       error={errors.confirmPassword}
                       placeholder="رمز عبور را دوباره وارد کنید"
                     />
-                  )}
-                </div>
-                <button type="submit" className={styles.AuthForm__submit}>
-                  {isLogin ? "ورود" : "ثبت‌نام"}
-                </button>
-              </form>
-              <p className={styles.AuthForm__toggle}>
-                {isLogin ? "حساب کاربری ندارید؟" : "قبلاً ثبت‌نام کرده‌اید؟"}
-                <button
-                  type="button"
-                  onClick={toggleForm}
-                  className={styles.AuthForm__toggleButton}
-                >
-                  {isLogin ? "ثبت‌نام کنید" : "وارد شوید"}
-                </button>
-              </p>
-            </>
-          )}
-        </div>
+                  </div>
+                )}
+              </div>
+              <button type="submit" className={styles.AuthForm__submit}>
+                {isLogin ? "ورود" : "ثبت‌نام"}
+              </button>
+            </form>
+            <p className={styles.AuthForm__toggle}>
+              {isLogin ? "حساب کاربری ندارید؟" : "قبلاً ثبت‌نام کرده‌اید؟"}
+              <button
+                type="button"
+                onClick={toggleForm}
+                className={styles.AuthForm__toggleButton}
+              >
+                {isLogin ? "ثبت‌نام کنید" : "وارد شوید"}
+              </button>
+            </p>
+          </>
+        )}
       </div>
-    </>
+    </div>
   );
 };
 

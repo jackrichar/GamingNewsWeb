@@ -46,14 +46,14 @@
     flex-direction: column-reverse;
     flex-wrap: nowrap;
 
-    .App-Navigation{
+    .App-Navigation {
       z-index: 999999;
       width: 100% !important;
       height: 55px !important;
       position: fixed;
     }
 
-    .App-Content{
+    .App-Content {
       width: 100% !important;
       height: calc(100% - 55px);
     }

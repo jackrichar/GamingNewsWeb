@@ -1,38 +1,24 @@
 .game-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-}
-
-.cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  max-width: 1200px;
   width: 100%;
-}
 
-.pagination {
-  margin-top: 20px;
-  display: flex;
-  gap: 10px;
+  margin: 0 auto;
+  padding: 2rem;
+  direction: rtl;
 
-  button {
-    padding: 10px 20px;
-    cursor: pointer;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    border-radius: 5px;
-
-    &:disabled {
-      cursor: not-allowed;
-      opacity: 0.5;
-    }
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(250px, 1fr)
+    ); // کارت‌ها در ستون‌های responsive
+    gap: 1.5rem; // فاصله بین کارت‌ها
+    justify-items: start; // شروع چیدمان از سمت راست (چون rtl است)
   }
 
-  span {
-    align-self: center;
+  .loading {
+    text-align: center;
+    padding: 1rem;
+    color: #777;
+    font-size: 1rem;
   }
 }

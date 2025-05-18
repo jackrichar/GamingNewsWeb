@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import gamesData from "../../../Assets/jsone/Search.json"; // مسیر فایل JSON
-import "./GameDetails.scss"; // استایل مخصوص
+import gamesData from "../../../Assets/jsone/Search.json";
+import "./GameDetails.scss";
 
 const GameDetails = () => {
-  const { id } = useParams(); // id از URL دریافت می‌شود (به صورت رشته)
-  const game = gamesData.find((game) => game.id === parseInt(id)); // تبدیل id به عدد
+  const { id } = useParams<{ id: string }>(); // مشخص کردن نوع id به‌عنوان string
+  const game = gamesData.find((game) => game.id === parseInt(id || "0")); // مدیریت id undefined
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const openLightbox = (image: string) => {
+    setSelectedImage(image);
+  };
+
+  const closeLightbox = () => {
+    setSelectedImage(null);
+  };
 
   if (!game) {
     return (
@@ -36,8 +45,23 @@ const GameDetails = () => {
                 src={image}
                 alt={`${game.Title} screenshot ${index + 1}`}
                 className="gallery-image"
+                onClick={() => openLightbox(image)}
               />
             ))}
+          </div>
+        </div>
+      )}
+      {selectedImage && (
+        <div className="lightbox" onClick={closeLightbox}>
+          <div className="lightbox-content">
+            <img
+              src={selectedImage}
+              alt="Enlarged screenshot"
+              className="lightbox-image"
+            />
+            <button className="lightbox-close" onClick={closeLightbox}>
+              ×
+            </button>
           </div>
         </div>
       )}

@@ -8,7 +8,9 @@ const HomePageLazy = React.lazy(() => import("../component/HomePage/HomePage"));
 const ArchivePageLazy = React.lazy(
   () => import("../component/ArchivePage/ArchivePage")
 );
-const LoadingPageLazy = React.lazy(() => import("../component/All Item/LoadingPage/LoadingPage"));
+const LoadingPageLazy = React.lazy(
+  () => import("../component/All Item/LoadingPage/LoadingPage")
+);
 
 const LoginPageLazy = React.lazy(
   () => import("../component/LoginPage/LoginPage")
@@ -37,7 +39,7 @@ const App = () => {
           NavigationStatus ? "Open-App-Content" : "Close-App-Content"
         }`}
       >
-        <React.Suspense fallback={<LoadingPageLazy/>}>
+        <React.Suspense fallback={<LoadingPageLazy />}>
           <Routes>
             <Route path="/" element={<HomePageLazy />} />
             <Route path="/Home" element={<Navigate to="/" />} />

@@ -46,6 +46,10 @@
     &__password {
       display: flex;
       width: 100%;
+      justify-content: space-between;
+    }
+    &__flexInput {
+      width: 48%;
     }
 
     &__submit {
