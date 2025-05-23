@@ -1,0 +1,106 @@
+.custom-range-wrapper {
+  width: 100%; // کاهش عرض کلی
+  margin: 10px auto; // حاشیه کمتر
+  padding: 5px; // پدینگ کمتر
+  border-radius: 6px; // گوشه‌ها کمی گرد
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); // سایه سبک‌تر
+  direction: rtl;
+  font-family: Arial, sans-serif;
+}
+
+.custom-range-inputs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px; // فاصله کمتر بین ورودی‌ها و اسلایدر
+  flex-direction: row-reverse;
+}
+
+.custom-range-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.custom-range-label {
+  font-size: 10px; // فونت کوچیک‌تر برای لیبل
+  color: #ffffff;
+  margin-bottom: 2px; // فاصله کمتر
+}
+
+.custom-range-input {
+  width: 40px; // عرض ورودی خیلی کم
+  padding: 4px; // پدینگ کمتر
+  border: none;
+  border-radius: 3px; // گوشه‌های کوچیک‌تر
+  text-align: center;
+  font-size: 10px; // فونت کوچیک‌تر
+  background-color: #212529;
+  box-shadow: 0 0 2px 0 #484a50; // سایه کوچیک‌تر
+  color: #ffffff;
+  outline: none;
+
+  &:focus {
+    border-color: #4b5cc4;
+    box-shadow: 0 0 0 2px rgba(75, 92, 196, 0.2); // سایه فوکوس کوچیک‌تر
+  }
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    display: none;
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+.custom-range-container {
+  position: relative;
+  height: 20px; // ارتفاع اسلایدر خیلی کم
+  width: 100%;
+}
+
+.custom-range-track {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 4px; // ارتفاع track کم
+  background-color: #e5e7eb;
+  border-radius: 2px; // گوشه‌های کوچیک‌تر
+  cursor: pointer;
+}
+
+.custom-range-filled {
+  position: absolute;
+  top: 0;
+  height: 4px; // ارتفاع بخش پرشده کم
+  background-color: #4b5cc4;
+  border-radius: 2px;
+}
+
+.custom-range-thumb {
+  position: absolute;
+  top: 50%;
+  width: 10px; // سایز thumb خیلی کم
+  height: 10px; // سایز thumb خیلی کم
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15); // سایه سبک‌تر
+  transition: background-color 0.2s ease-in-out;
+}
+
+.custom-range-thumb-min {
+  background-color: #3b82f6;
+}
+
+.custom-range-thumb-max {
+  background-color: #10b981;
+}
+
+.custom-range-thumb-min:active {
+  background-color: #2563eb;
+}
+
+.custom-range-thumb-max:active {
+  background-color: #059669;
+}
