@@ -31,9 +31,10 @@ const PaginatedItems = ({ items, Year, Genres, MetaPoint }) => {
         }
 
         if (Genres?.length > 0) {
+            console.log(Genres);
             result = result.filter((item) => {
                 const itemGenre = item.Genre || '';
-                return Genres.includes(itemGenre);
+                return Genres.some((genre) => itemGenre.includes(genre));
             });
         }
 
