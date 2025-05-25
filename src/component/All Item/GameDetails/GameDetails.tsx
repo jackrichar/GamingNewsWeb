@@ -34,7 +34,7 @@ const GameDetails = () => {
       <img src={game.Banner} alt={game.Title} className="game-banner" />
       <h2>{game.Title}</h2>
       <p>ژانر: {game.Genre}</p>
-      {game.Rating && <p>امتیاز: {game.Rating}/100</p>}
+      {game.MetaScore && <p>امتیاز: {game.MetaScore}/100</p>}
       {game.Gallery && (
         <div className="game-gallery">
           <h3>گالری تصاویر</h3>

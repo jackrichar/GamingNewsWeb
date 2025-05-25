@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import './CustomDualRangeStyle.scss';
 import PropTypes from 'prop-types';
 
-function CustomDualRange({ MaxLabel, MinLabel, MinValue, MaxValue }) {
+function CustomDualRange({ MaxLabel, MinLabel, MinValue, MaxValue, onRangeChange }) {
     // محاسبه totalRange بر اساس MinValue و MaxValue
     const totalRange = MaxValue - MinValue;
 
@@ -107,6 +107,16 @@ function CustomDualRange({ MaxLabel, MinLabel, MinValue, MaxValue }) {
     const displayMin = min + MinValue;
     const displayMax = max + MinValue;
 
+    // فراخوانی onRangeChange هر بار که min یا max تغییر می‌کنه
+    useEffect(() => {
+        if (onRangeChange) {
+            onRangeChange({
+                minValue: displayMin,
+                maxValue: displayMax,
+            });
+        }
+    }, [min, max, displayMin, displayMax, onRangeChange]);
+
     return (
         <div className="custom-range-wrapper">
             <div className="custom-range-inputs">
@@ -195,6 +205,11 @@ CustomDualRange.propTypes = {
     MinLabel: PropTypes.string.isRequired,
     MinValue: PropTypes.number.isRequired,
     MaxValue: PropTypes.number.isRequired,
+    onRangeChange: PropTypes.func, // پراپس جدید برای خروجی
+};
+
+CustomDualRange.defaultProps = {
+    onRangeChange: () => {}, // مقدار پیش‌فرض برای جلوگیری از خطا
 };
 
 export default CustomDualRange;

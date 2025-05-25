@@ -1,151 +1,267 @@
-.Show-Up{
-  visibility: visible !important;
-  opacity: 1 !important;
-  top: 35px !important;
-  transition: all ease-in-out 200ms;
-}
-
-
-
-.Custom-Select-Box{
+.Custom-Select-Box {
   user-select: none;
   -webkit-user-select: none;
   -webkit-tap-highlight-color: transparent;
   position: relative;
-  width: clamp(100px, 30vw, 150px);
-  height: 30px;
-  background-color: #212529;
-  box-shadow: 0 0 3px 0 #484a50;
-  border-radius: 5px;
-  transition: box-shadow ease-in-out 150ms;
-  .Custom-Select-Box-Arrow{
+  width: 100%;
+  max-width: 300px; // حداکثر عرض برای زیبایی
+  height: 40px; // افزایش ارتفاع برای ظاهر بهتر
+  background-color: #1e1e2f;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); // سایه نرم
+  border-radius: 8px; // گوشه‌های گردتر
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4); // سایه قوی‌تر موقع هورور
+    transform: translateY(-2px); // بالا آمدن موقع هورور
+    cursor: pointer;
+  }
+
+  .Custom-Select-Box-Arrow {
     position: absolute;
     top: 0;
     left: 0;
-    width: 30px;
+    width: 40px;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 5px 0 0 5px;
-    transition: background-color ease-in-out 150ms;
-    svg{
-      width: 15px;
-      transition: rotate ease-in-out 150ms;
+    border-radius: 8px 0 0 8px;
+    background-color: #1e1e2f;
+    transition: background 0.3s ease-in-out;
+
+    svg {
+      width: 18px;
+      height: 18px;
+      fill: #a1b5c9; // رنگ آیکون
+      transition: transform 0.3s ease-in-out; // انیمیشن نرم برای چرخش
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2); // تغییر پس‌زمینه موقع هورور
     }
   }
-  .Custom-Select-Box-Text{
+
+  .Custom-Select-Box-Text {
     width: 100%;
     height: 100%;
     text-align: right;
     display: flex;
     align-items: center;
-    padding: 0 7px;
+    padding: 0 10px 0 40px; // فاصله برای آیکون
     border: none;
     outline: none;
     background-color: transparent;
-    font-family: var(--IranSansWeb), serif;
-    font-size: 14px;
-    color: #ffffff;
+    font-family: 'Inter', sans-serif; // فونت مدرن
+    font-size: 15px;
+    font-weight: 500;
+    color: #e0e6ed; // رنگ متن روشن
+    letter-spacing: 0.5px; // فاصله حروف برای خوانایی
+
+    span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap; // جلوگیری از شکستن متن
+    }
   }
-  .Custom-Select-Box-Drop-Down{
+
+  .Custom-Select-Box-Drop-Down {
     direction: ltr;
     cursor: default;
     position: absolute;
     width: 100%;
     height: auto;
-    max-height: 140px;
-    top: 35px;
+    max-height: 200px; // ارتفاع بیشتر برای اسکرول
+    top: 48px; // فاصله بیشتر از بالا
     opacity: 0;
     visibility: hidden;
-    border-radius: 5px;
-    background-color: #343a40;
+    border-radius: 8px;
+    background: linear-gradient(145deg, #2d3748, #1a202c); // گرادیانت برای دراپ‌داون
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); // سایه قوی‌تر
     overflow-x: hidden;
     overflow-y: auto;
-    transition: all ease-in-out 200ms;
+    z-index: 10; // مطمئن شدن از روی هم نیفتادن
+    transition: all 0.3s ease-in-out;
 
-    .Item-List-Background{
+    // اسکرولبار زیبا
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #1a202c;
+      border-radius: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #4a5568;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #718096;
+    }
+
+    .Item-List-Background {
       width: 100%;
       height: 100%;
       list-style: none;
-      .Item-List{
+      padding: 5px 0; // فاصله داخلی
+
+      .Item-List {
         width: 100%;
-        height: 35px;
-        .Item-List-Button{
+        height: 40px; // ارتفاع بیشتر برای هر آیتم
+
+        .Item-List-Button {
           width: 100%;
           height: 100%;
           border: none;
           outline: none;
           background-color: transparent;
           text-align: right;
-          padding: 0 5px;
-          transition: background-color ease-in-out 150ms;
+          padding: 0 10px;
+          display: flex;
+          align-items: center;
+          transition: all 0.2s ease-in-out;
 
-          span{
-            font-family: var(--IranSansWeb), serif;
-            font-size: clamp(14px, 4vw, 16px);
-            color: #ffffff;
-            transition: color ease-in-out 150ms;
+          span {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            color: #cbd5e0;
+            transition: all 0.2s ease-in-out;
+          }
+
+          &:hover {
+            cursor: pointer;
+            background: rgba(113, 128, 150, 0.2); // پس‌زمینه موقع هورور
+            span {
+              color: #ffffff;
+              transform: translateX(-5px); // جابه‌جایی ظریف موقع هورور
+            }
           }
         }
-        .Item-List-Button:hover{
-          cursor: pointer;
-          background-color: #6c757d;
-          transition: background-color ease-in-out 150ms;
-          span{
+
+        .Item-List-Button-Active {
+          background: rgba(113, 128, 150, 0.3); // پس‌زمینه آیتم انتخاب‌شده
+          span {
             color: #ffffff;
-            transition: color ease-in-out 150ms, left ease-in-out 150ms;
+            font-weight: 600;
           }
         }
-        .Item-List-Button-Active{
-          background-color: #6c757d;
 
-        }
-
-        .Item-List-Checkbox{
+        .Item-List-Checkbox {
           width: 100%;
           height: 100%;
           border: none;
           outline: none;
           background-color: transparent;
           text-align: right;
-          padding: 0 5px;
+          padding: 0 10px;
           display: flex;
           align-items: center;
           justify-content: space-between;
-          transition: background-color ease-in-out 150ms;
+          transition: all 0.2s ease-in-out;
 
-          label{
+          label {
             width: 100%;
             height: 100%;
-            font-family: var(--IranSansWeb), serif;
-            font-size: clamp(9px, 2vw, 15px);
-            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            color: #cbd5e0;
             display: flex;
             align-items: center;
+            transition: color 0.2s ease-in-out;
+          }
+
+          input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            accent-color: #4a90e2; // رنگ چک‌باکس
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+          }
+
+          &:hover {
+            cursor: pointer;
+            background: rgba(113, 128, 150, 0.2);
+            label {
+              color: #ffffff;
+              cursor: pointer;
+            }
+
+            input[type="checkbox"] {
+              transform: scale(1.1); // بزرگ شدن چک‌باکس موقع هورور
+            }
           }
         }
-        .Item-List-Checkbox:hover{
-          cursor: pointer;
-          background-color: #6c757d;
-          transition: background-color ease-in-out 150ms;
-
-          label{
-            cursor: pointer;
-          }
-
-          input[type="checkbox"]{
-            cursor: pointer;
-          }
-        }
-
       }
     }
   }
 }
 
-.Custom-Select-Box:hover{
-  box-shadow: 0 0 5px 0 #4c4c4c;
-  cursor: pointer;
-  transition: box-shadow ease-in-out 150ms;
+.Show-Up {
+  visibility: visible !important;
+  opacity: 1 !important;
+  top: 48px !important;
+  transform: translateY(0); // انیمیشن ورود نرم
+  transition: all 0.3s ease-in-out;
+}
+
+/* ریسپانسیو */
+@media screen and (max-width: 576px) {
+  .Custom-Select-Box {
+    max-width: 100%;
+    height: 36px;
+
+    .Custom-Select-Box-Arrow {
+      width: 36px;
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    .Custom-Select-Box-Text {
+      font-size: 13px;
+      padding: 0 8px 0 36px;
+    }
+
+    .Custom-Select-Box-Drop-Down {
+      max-height: 180px;
+      top: 44px;
+
+      .Item-List-Background {
+        .Item-List {
+          height: 36px;
+
+          .Item-List-Button {
+            padding: 0 8px;
+
+            span {
+              font-size: 13px;
+            }
+          }
+
+          .Item-List-Checkbox {
+            padding: 0 8px;
+
+            label {
+              font-size: 13px;
+            }
+
+            input[type="checkbox"] {
+              width: 14px;
+              height: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .Show-Up {
+    top: 44px !important;
+  }
 }

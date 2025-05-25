@@ -1,287 +1,47 @@
 [
   {
     "id": 0,
-    "Title": "Batman Arkham Knight",
-    "Genre": "Action",
-    "Poster": "https://i.ebayimg.com/images/g/WXcAAOSwq9NkOjJf/s-l1200.jpg",
-    "Banner": "https://static1.squarespace.com/static/615dd9c46ea913604f68e0aa/615ddaca3a80a4746f9e7543/615ddaca3a80a4746f9e75cd/1657046751697/Project+Thumbnail+-+Batman+Arkham+Knight.jpg?format=1500w",
+    "Title": "The Legend of Zelda: Breath of the Wild",
+    "Genre": "Action-Adventure",
+    "Poster": "https://m.media-amazon.com/images/I/61Cr-6BDTML._AC_UF894,1000_QL80_.jpg",
+    "Banner": "https://cdn2.steamgriddb.com/grid/c0858d31da09dfc8bfef689f7f033d74.png",
     "Gallery": [
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRALAGiZrjftFhOaFILNoR7duLD1q9ITUdnZg&s",
-      "https://cdn.mos.cms.futurecdn.net/ec9b667f646f7007cc3207e2cf6bd9f1-1200-80.jpg",
-      "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/13076927/game-offline-Batman-Arkham-Knight-chinh-thuc-chao-ban-season-pass-02.0.0.1435849225.jpg?quality=90&strip=all&crop=0,3.4613147178592,100,93.077370564282",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJD3Rwj5ZKX2j-BYsoIffFWiEaZ_ZLxAeIvDS3W-dheS5Jr5l_M214ghoySL1OCLsxIkA&usqp=CAU"
+      "https://images2.minutemediacdn.com/image/upload/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/shape/cover/sport/41b756b9de4adc124d289ccecbf44da31c5aa5a7a25f5434fc3df3e1d5adfbb7.jpg",
+      "https://cdn.arstechnica.net/wp-content/uploads/2021/06/Screenshot-1190.png",
+      "https://www.gamespot.com/a/uploads/original/1179/11799911/3170414-zelda.jpg"
     ],
     "SaveGame": false,
-    "Rating": "10"
+    "Year": 2017,
+    "MetaScore": 97
   },
   {
     "id": 1,
-    "Title": "The Witcher 3: Wild Hunt",
-    "Genre": "RPG",
-    "Poster": "https://i.ebayimg.com/00/s/MTYwMFgxMDY3/z/MCIAAOSwbP1aetq6/$_57.JPG?set_id=8800005007",
-    "Banner": "https://image.api.playstation.com/vulcan/ap/rnd/202211/0914/TvcIHkYqqln1RGbaFqBeuFp6.jpg",
-    "SaveGame": true
+    "Title": "Elden Ring",
+    "Genre": "Action RPG",
+    "Poster": "https://www.nuclearblast.com/cdn/shop/files/pp34890.jpg?v=1742398450",
+    "Banner": "https://www.candb.com/site/candb/images/artwork/elden-ring_bandai-namco.jpg",
+    "Gallery": [
+      "https://cdn.mos.cms.futurecdn.net/M6VbiCgsh8u7k8hWRjKkYh-1200-80.jpg",
+      "https://images.squarespace-cdn.com/content/v1/56d5457d8259b57a20245e80/1645604293377-O6HIZ326SQ526ROCBK21/Elden+Ring+thumb+2022_4.jpg",
+      "https://preview.redd.it/uswkrcp7wq791.jpg?width=1080&crop=smart&auto=webp&s=0e2694db04b0ec834e89dadaaf3f779bcc91052a"
+    ],
+    "SaveGame": false,
+    "Year": 2022,
+    "MetaScore": 94
   },
   {
     "id": 2,
-    "Title": "Red Dead Redemption 2",
-    "Genre": "Adventure",
-    "Poster": "https://i.ebayimg.com/images/g/d5EAAOSwgHNizgZc/s-l1200.jpg",
-    "Banner": "https://images.squarespace-cdn.com/content/v1/54e310f0e4b0f4a6ba3ac899/a8ad450f-4e91-478d-85a7-14eef0b75fef/Red+Dead+Redemption+2+Banner+650.jpg",
-    "SaveGame": false
-  },
-  {
-    "id": 3,
-    "Title": "God of War",
-    "Genre": "Action",
-    "Poster": "https://m.media-amazon.com/images/I/716XS+cJ-UL.jpg",
+    "Title": "God of War (2018)",
+    "Genre": "Action-Adventure",
+    "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj2Ze84O5j8mHivDUBXYrrRNo844YKcja0vg&s",
     "Banner": "https://www.posterposse.com/wp-content/uploads/2018/06/God-Of-War-banner.jpeg",
-    "SaveGame": true
-  },
-  {
-    "id": 4,
-    "Title": "Cyberpunk 2077",
-    "Genre": "Sci-Fi RPG",
-    "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZk1OFCrahumMMGYwemiggWPZToY_OwWm1sw&s",
-    "Banner": "https://www.psu.com/wp/wp-content/uploads/2020/09/Cyberpunk-2077-PS4-Wallpaper-04.jpg",
-    "SaveGame": true
-  },
-  {
-    "id": 5,
-    "Title": "Elden Ring",
-    "Genre": "Fantasy RPG",
-    "Poster": "https://preview.redd.it/bueqtztxmnj81.png?width=640&crop=smart&auto=webp&s=377e0d875affec6537a26c6cc7f4721aebdeaba5",
-    "Banner": "https://gmedia.playstation.com/is/image/SIEPDC/Elden-Ring-Shadow-of-the-Erdtree-background-desktop-01-en-01mar24?$1600px$",
-    "SaveGame": false
-  },
-  {
-    "id": 6,
-    "Title": "Horizon Zero Dawn",
-    "Genre": "Action RPG",
-    "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRd8mB6hOooNbIne0hZkLuErh40xnwJBCWJg&s",
-    "Banner": "https://gmedia.playstation.com/is/image/SIEPDC/horizon-zero-dawn-remastered-hero-desktop-01-en-27sep24?$1600px$",
-    "SaveGame": true
-  },
-  {
-    "id": 7,
-    "Title": "Assassin's Creed Valhalla",
-    "Genre": "Action Adventure",
-    "Poster": "https://m.media-amazon.com/images/I/61p5e0TQnHL._AC_UF894,1000_QL80_.jpg",
-    "Banner": "https://gmedia.playstation.com/is/image/SIEPDC/assassins-creed-valhalla-pdp-hero-01-ps4-17jul20$en-us?$1600px$",
-    "SaveGame": false
-  },
-  {
-    "id": 8,
-    "Title": "Death Stranding",
-    "Genre": "Adventure",
-    "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSWuC-V3GjJWjgd4_G_Igoirz-UpFoMzx47g&s",
-    "Banner": "https://gmedia.playstation.com/is/image/SIEPDC/death-stranding-directors-cut-hero-01-en-12march24?$1600px$",
-    "SaveGame": true
-  },
-  {
-    "id": 9,
-    "Title": "Far Cry 6",
-    "Genre": "FPS",
-    "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR53_G0V92hXTW52nRmUS06p3mAjGu2Nw1OfA&s",
-    "Banner": "https://gmedia.playstation.com/is/image/SIEPDC/far-cry-6-homepage-hero-desktop-01-ps4-ps5-25may21$en?$1600px$",
-    "SaveGame": false
-  }
-,
-  {
-    "id": 10,
-    "Title": "Far Cry 6",
-    "Genre": "FPS",
-    "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR53_G0V92hXTW52nRmUS06p3mAjGu2Nw1OfA&s",
-    "Banner": "https://gmedia.playstation.com/is/image/SIEPDC/far-cry-6-homepage-hero-desktop-01-ps4-ps5-25may21$en?$1600px$",
-    "SaveGame": false
-  }
-,
-  {
-    "id": 11,
-    "Title": "Far Cry 6",
-    "Genre": "FPS",
-    "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR53_G0V92hXTW52nRmUS06p3mAjGu2Nw1OfA&s",
-    "Banner": "https://gmedia.playstation.com/is/image/SIEPDC/far-cry-6-homepage-hero-desktop-01-ps4-ps5-25may21$en?$1600px$",
-    "SaveGame": false
-  }
-,
-  {
-    "id": 12,
-    "Title": "Far Cry 6",
-    "Genre": "FPS",
-    "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR53_G0V92hXTW52nRmUS06p3mAjGu2Nw1OfA&s",
-    "Banner": "https://gmedia.playstation.com/is/image/SIEPDC/far-cry-6-homepage-hero-desktop-01-ps4-ps5-25may21$en?$1600px$",
-    "SaveGame": false
-  }
-,
-  {
-    "id": 13,
-    "Title": "Far Cry 6",
-    "Genre": "FPS",
-    "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR53_G0V92hXTW52nRmUS06p3mAjGu2Nw1OfA&s",
-    "Banner": "https://gmedia.playstation.com/is/image/SIEPDC/far-cry-6-homepage-hero-desktop-01-ps4-ps5-25may21$en?$1600px$",
-    "SaveGame": false
-  }
-,
-  {
-    "id": 14,
-    "Title": "Far Cry 6",
-    "Genre": "FPS",
-    "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR53_G0V92hXTW52nRmUS06p3mAjGu2Nw1OfA&s",
-    "Banner": "https://gmedia.playstation.com/is/image/SIEPDC/far-cry-6-homepage-hero-desktop-01-ps4-ps5-25may21$en?$1600px$",
-    "SaveGame": false
-  }
-,
-  {
-    "id": 15,
-    "Title": "Far Cry 6",
-    "Genre": "FPS",
-    "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR53_G0V92hXTW52nRmUS06p3mAjGu2Nw1OfA&s",
-    "Banner": "https://gmedia.playstation.com/is/image/SIEPDC/far-cry-6-homepage-hero-desktop-01-ps4-ps5-25may21$en?$1600px$",
-    "SaveGame": false
-  }
-,
-  {
-    "id": 16,
-    "Title": "Far Cry 6",
-    "Genre": "FPS",
-    "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR53_G0V92hXTW52nRmUS06p3mAjGu2Nw1OfA&s",
-    "Banner": "https://gmedia.playstation.com/is/image/SIEPDC/far-cry-6-homepage-hero-desktop-01-ps4-ps5-25may21$en?$1600px$",
-    "SaveGame": false
-  }
-,
-  {
-    "id": 17,
-    "Title": "Far Cry 6",
-    "Genre": "FPS",
-    "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR53_G0V92hXTW52nRmUS06p3mAjGu2Nw1OfA&s",
-    "Banner": "https://gmedia.playstation.com/is/image/SIEPDC/far-cry-6-homepage-hero-desktop-01-ps4-ps5-25may21$en?$1600px$",
-    "SaveGame": false
-  }
-,
-  {
-    "id": 18,
-    "Title": "Far Cry 6",
-    "Genre": "FPS",
-    "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR53_G0V92hXTW52nRmUS06p3mAjGu2Nw1OfA&s",
-    "Banner": "https://gmedia.playstation.com/is/image/SIEPDC/far-cry-6-homepage-hero-desktop-01-ps4-ps5-25may21$en?$1600px$",
-    "SaveGame": false
-  }
-,
-  {
-    "id": 19,
-    "Title": "Far Cry 6",
-    "Genre": "FPS",
-    "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR53_G0V92hXTW52nRmUS06p3mAjGu2Nw1OfA&s",
-    "Banner": "https://gmedia.playstation.com/is/image/SIEPDC/far-cry-6-homepage-hero-desktop-01-ps4-ps5-25may21$en?$1600px$",
-    "SaveGame": false
-  }
-,
-  {
-    "id": 20,
-    "Title": "Far Cry 6",
-    "Genre": "FPS",
-    "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR53_G0V92hXTW52nRmUS06p3mAjGu2Nw1OfA&s",
-    "Banner": "https://gmedia.playstation.com/is/image/SIEPDC/far-cry-6-homepage-hero-desktop-01-ps4-ps5-25may21$en?$1600px$",
-    "SaveGame": false
-  }
-,
-  {
-    "id": 21,
-    "Title": "Far Cry 6",
-    "Genre": "FPS",
-    "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR53_G0V92hXTW52nRmUS06p3mAjGu2Nw1OfA&s",
-    "Banner": "https://gmedia.playstation.com/is/image/SIEPDC/far-cry-6-homepage-hero-desktop-01-ps4-ps5-25may21$en?$1600px$",
-    "SaveGame": false
-  }
-,
-  {
-    "id": 22,
-    "Title": "Far Cry 6",
-    "Genre": "FPS",
-    "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR53_G0V92hXTW52nRmUS06p3mAjGu2Nw1OfA&s",
-    "Banner": "https://gmedia.playstation.com/is/image/SIEPDC/far-cry-6-homepage-hero-desktop-01-ps4-ps5-25may21$en?$1600px$",
-    "SaveGame": false
-  }
-,
-  {
-    "id": 23,
-    "Title": "Far Cry 6",
-    "Genre": "FPS",
-    "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR53_G0V92hXTW52nRmUS06p3mAjGu2Nw1OfA&s",
-    "Banner": "https://gmedia.playstation.com/is/image/SIEPDC/far-cry-6-homepage-hero-desktop-01-ps4-ps5-25may21$en?$1600px$",
-    "SaveGame": false
-  }
-,
-  {
-    "id": 24,
-    "Title": "Far Cry 6",
-    "Genre": "FPS",
-    "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR53_G0V92hXTW52nRmUS06p3mAjGu2Nw1OfA&s",
-    "Banner": "https://gmedia.playstation.com/is/image/SIEPDC/far-cry-6-homepage-hero-desktop-01-ps4-ps5-25may21$en?$1600px$",
-    "SaveGame": false
-  }
-,
-  {
-    "id": 25,
-    "Title": "Far Cry 6",
-    "Genre": "FPS",
-    "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR53_G0V92hXTW52nRmUS06p3mAjGu2Nw1OfA&s",
-    "Banner": "https://gmedia.playstation.com/is/image/SIEPDC/far-cry-6-homepage-hero-desktop-01-ps4-ps5-25may21$en?$1600px$",
-    "SaveGame": false
-  }
-,
-  {
-    "id": 26,
-    "Title": "Far Cry 6",
-    "Genre": "FPS",
-    "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR53_G0V92hXTW52nRmUS06p3mAjGu2Nw1OfA&s",
-    "Banner": "https://gmedia.playstation.com/is/image/SIEPDC/far-cry-6-homepage-hero-desktop-01-ps4-ps5-25may21$en?$1600px$",
-    "SaveGame": false
-  }
-,
-  {
-    "id": 27,
-    "Title": "Far Cry 6",
-    "Genre": "FPS",
-    "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR53_G0V92hXTW52nRmUS06p3mAjGu2Nw1OfA&s",
-    "Banner": "https://gmedia.playstation.com/is/image/SIEPDC/far-cry-6-homepage-hero-desktop-01-ps4-ps5-25may21$en?$1600px$",
-    "SaveGame": false
-  }
-,
-  {
-    "id": 28,
-    "Title": "Far Cry 6",
-    "Genre": "FPS",
-    "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR53_G0V92hXTW52nRmUS06p3mAjGu2Nw1OfA&s",
-    "Banner": "https://gmedia.playstation.com/is/image/SIEPDC/far-cry-6-homepage-hero-desktop-01-ps4-ps5-25may21$en?$1600px$",
-    "SaveGame": false
-  }
-,
-  {
-    "id": 29,
-    "Title": "Far Cry 6",
-    "Genre": "FPS",
-    "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR53_G0V92hXTW52nRmUS06p3mAjGu2Nw1OfA&s",
-    "Banner": "https://gmedia.playstation.com/is/image/SIEPDC/far-cry-6-homepage-hero-desktop-01-ps4-ps5-25may21$en?$1600px$",
-    "SaveGame": false
-  }
-,
-  {
-    "id": 30,
-    "Title": "Far Cry 6",
-    "Genre": "FPS",
-    "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR53_G0V92hXTW52nRmUS06p3mAjGu2Nw1OfA&s",
-    "Banner": "https://gmedia.playstation.com/is/image/SIEPDC/far-cry-6-homepage-hero-desktop-01-ps4-ps5-25may21$en?$1600px$",
-    "SaveGame": false
-  }
-,
-  {
-    "id": 31,
-    "Title": "Far Cry 6",
-    "Genre": "FPS",
-    "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR53_G0V92hXTW52nRmUS06p3mAjGu2Nw1OfA&s",
-    "Banner": "https://gmedia.playstation.com/is/image/SIEPDC/far-cry-6-homepage-hero-desktop-01-ps4-ps5-25may21$en?$1600px$",
-    "SaveGame": false
+    "Gallery": [
+      "https://i.ytimg.com/vi/6LOD-pwJY6E/maxresdefault.jpg",
+      "https://www.cnet.com/a/img/resize/d74f1faa23c20baeac2c7333eec48abb1db50956/hub/2018/04/12/5de6fb19-4559-4f9d-bf03-0946043bbec8/god-of-war-20180402115205.jpg?auto=webp&fit=crop&height=675&width=1200",
+      "https://i.insider.com/5ad0c6dd146e712c008b4853?width=800&format=jpeg&auto=webp"
+    ],
+    "SaveGame": false,
+    "Year": 2018,
+    "MetaScore": 94
   }
 ]

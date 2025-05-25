@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import './FilterStyle.scss';
 
 // Import SVG
@@ -10,65 +10,87 @@ import { ReactComponent as MetacriticIco } from '../../../Assets/Icon/Metacritic
 
 // Import Component
 import CustomDualRange from '../../All Item/CustomDualRange/CustomDualRange';
+import CustomSelectBox from '../../All Item/CustomSelectBox/CustomSelectBox';
 
-const Filter = () => {
-    const [isFilterOpen, setIsFilterOpen] = useState(false); // استیت یکپارچه برای فیلتر
-    const [activeSection, setActiveSection] = useState(null); // استیت برای بخش فعال
-    const [titleVisibility, setTitleVisibility] = useState({
-        calendar: false,
-        genre: false,
-        meta: false,
-    }); // استیت برای نمایش تایتل‌ها
+const Filter = ({ setYear, setGenres, setMetaPoint }) => {
+    const [isFilterOpen, setIsFilterOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState(null);
 
-    // مدیریت نمایش تایتل‌ها با تأخیر بعد از غیرفعال شدن
-    useEffect(() => {
-        const timers = {};
+    // Debounce function for state updates
+    const debounce = (func, delay) => {
+        let timeout;
+        return (...args) => {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func(...args), delay);
+        };
+    };
 
+    // مدیریت نمایش تایتل‌ها با استفاده از useMemo
+    const titleVisibility = useMemo(() => {
         if (!activeSection) {
-            // وقتی هیچ بخشی فعال نیست، تایتل‌ها رو با تأخیر نمایش بده
-            const showTitles = () => {
-                setTitleVisibility({
-                    calendar: true,
-                    genre: true,
-                    meta: true,
-                });
-            };
-
-            const timer = setTimeout(showTitles, 150);
-            timers.general = timer;
-        } else {
-            // وقتی یه بخش فعال می‌شه، تایتل اون بخش رو مخفی کن
-            const hideTitle = () => {
-                setTitleVisibility((prev) => ({
-                    ...prev,
-                    [activeSection]: false,
-                }));
-            };
-
-            const timer = setTimeout(hideTitle, 0); // فوراً مخفی کن
-            timers[activeSection] = timer;
+            return { calendar: true, genre: true, meta: true };
         }
-
-        // تمیزکاری
-        return () => {
-            Object.values(timers).forEach((timer) => clearTimeout(timer));
+        return {
+            calendar: activeSection !== 'calendar',
+            genre: activeSection !== 'genre',
+            meta: activeSection !== 'meta',
         };
     }, [activeSection]);
 
-    // تابع برای تغییر بخش فعال
-    const toggleSection = (section) => {
-        setActiveSection(activeSection === section ? null : section);
-        setIsFilterOpen(true); // باز نگه داشتن فیلتر وقتی بخش فعال می‌شه
-    };
+    // تابع toggleSection با useCallback برای جلوگیری از رندر اضافی
+    const toggleSection = useCallback(
+        (section) => {
+            setActiveSection((prev) => (prev === section ? null : section));
+            setIsFilterOpen(true);
+        },
+        [setActiveSection, setIsFilterOpen]
+    );
+
+    // تابع‌های به‌روزرسانی استیت با Debounce
+    const handleChangeYear = useCallback(
+        debounce((value) => {
+            setYear(value);
+        }, 300),
+        [setYear]
+    );
+
+    const handleChangeMetaPoint = useCallback(
+        debounce((value) => {
+            setMetaPoint(value);
+        }, 300),
+        [setMetaPoint]
+    );
+
+    const handleChangeGenre = useCallback(
+        debounce((value) => {
+            setGenres(value);
+        }, 300),
+        [setGenres]
+    );
+
+    // مدیریت تایمرها با useEffect بهینه‌شده
+    useEffect(() => {
+        let timer;
+        if (!activeSection) {
+            timer = setTimeout(() => {
+                // هیچ عملیاتی نیاز نیست، چون titleVisibility قبلاً با useMemo محاسبه شده
+            }, 150);
+        }
+        return () => clearTimeout(timer);
+    }, [activeSection]);
 
     return (
-        <div className="Archive-Page-Filter-Background">
+        <div
+            className="Archive-Page-Filter-Background"
+            onClick={(e) => e.stopPropagation()} // جلوگیری از انتشار رویداد به بالا
+        >
             <div className="Archive-Page-Filter">
                 <button
                     className="Archive-Page-Filter-Logo"
-                    onClick={() => {
+                    onClick={(e) => {
+                        e.stopPropagation();
                         setIsFilterOpen(!isFilterOpen);
-                        setActiveSection(null); // بستن همه بخش‌ها
+                        setActiveSection(null);
                     }}
                 >
                     {isFilterOpen ? <CloseIco /> : <FilterIco />}
@@ -76,38 +98,81 @@ const Filter = () => {
                 <div className={`Archive-Page-Filter-Item ${isFilterOpen ? 'Show-On-Year-Section' : ''}`}>
                     <button
                         className="Archive-Page-Filter-Logo"
-                        onClick={() => toggleSection('calendar')}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            toggleSection('calendar');
+                        }}
                     >
                         {activeSection === 'calendar' ? <CloseIco /> : <CalendarIco />}
                     </button>
-                    <div className={`Filter-Content ${activeSection === 'calendar' ? 'Show-On-Year-Filter-Content' : ''}`}>
-                        <CustomDualRange MinLabel="از سال" MaxLabel="تا سال" MaxValue={2025} MinValue={1991} />
+                    <div
+                        className={`Filter-Content ${activeSection === 'calendar' ? 'Show-On-Year-Filter-Content' : ''}`}
+                    >
+                        <CustomDualRange
+                            MinLabel="از سال"
+                            MaxLabel="تا سال"
+                            MaxValue={2025}
+                            MinValue={1991}
+                            onRangeChange={handleChangeYear}
+                        />
                     </div>
-                    {!activeSection && titleVisibility.calendar && <div className="Title-Section"><span>تاریخ</span></div>}
+                    {!activeSection && titleVisibility.calendar && (
+                        <div className="Title-Section">
+                            <span>تاریخ</span>
+                        </div>
+                    )}
                 </div>
                 <div className={`Archive-Page-Filter-Item ${isFilterOpen ? 'Show-On-Genre-Section' : ''}`}>
                     <button
                         className="Archive-Page-Filter-Logo"
-                        onClick={() => toggleSection('genre')}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            toggleSection('genre');
+                        }}
                     >
                         {activeSection === 'genre' ? <CloseIco /> : <GenreIco />}
                     </button>
-                    <div className="Filter-Content">
-                        {/* بخش ژانر هنوز خالیه، می‌تونی اینجا محتوا اضافه کنی */}
+                    <div
+                        className={`Filter-Content ${activeSection === 'genre' ? 'Show-On-Year-Filter-Content' : ''}`}
+                        style={{ backgroundColor: 'transparent' }}
+                    >
+                        <CustomSelectBox
+                            Placeholder="ژانر"
+                            Value={['Action', 'RPG', 'FPP']}
+                            Multiple={true}
+                            onChange={handleChangeGenre}
+                        />
                     </div>
-                    {!activeSection && titleVisibility.genre && <div className="Title-Section"><span>ژانر</span></div>}
+                    {!activeSection && titleVisibility.genre && (
+                        <div className="Title-Section">
+                            <span>ژانر</span>
+                        </div>
+                    )}
                 </div>
                 <div className={`Archive-Page-Filter-Item ${isFilterOpen ? 'Show-On-Meta-Section' : ''}`}>
                     <button
                         className="Archive-Page-Filter-Logo"
-                        onClick={() => toggleSection('meta')}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            toggleSection('meta');
+                        }}
                     >
                         {activeSection === 'meta' ? <CloseIco /> : <MetacriticIco />}
                     </button>
-                    <div className={`Filter-Content ${activeSection === 'meta' ? 'Show-On-Year-Filter-Content' : ''}`}>
-                        <CustomDualRange MaxValue={100} MinValue={0} />
+                    <div
+                        className={`Filter-Content ${activeSection === 'meta' ? 'Show-On-Year-Filter-Content' : ''}`}
+                    >
+                        <CustomDualRange
+                            MaxValue={100}
+                            MinValue={0}
+                            onRangeChange={handleChangeMetaPoint}
+                        />
                     </div>
-                    {!activeSection && titleVisibility.meta && <div className="Title-Section"><span>امتیاز</span></div>}
+                    {!activeSection && titleVisibility.meta && (
+                        <div className="Title-Section">
+                            <span>امتیاز</span>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

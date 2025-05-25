@@ -37,9 +37,6 @@ const HomePage = () => {
           <CartSlideShow Delay={3500} />
         </div>
       </div>
-      <div>
-        <GameList />
-      </div>
     </div>
   );
 };
