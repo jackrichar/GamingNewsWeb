@@ -29,6 +29,7 @@
   visibility: visible !important;
   transition: all ease-in-out 150ms !important;
 }
+/////////////////////////////////////////
 
 .Archive-Page-Filter-Background{
   width: 100%;
@@ -102,6 +103,33 @@
         padding: 0 10px;
         background-color: #1e1e2f;
         transition: all ease-in-out 150ms;
+      }
+
+      .Title-Section{
+        position: absolute;
+        z-index: 1;
+        width: auto;
+        height: auto;
+        right: 70px;
+        padding: 0 10px;
+        opacity: 0;
+        visibility: hidden;
+        border-radius: 10px;
+        background-color: #1e1e2f;
+        transition: all ease-in-out 150ms;
+        span{
+          font-family: var(--IranSansWeb), serif;
+          font-size: 10px;
+        }
+      }
+
+    }
+    .Archive-Page-Filter-Item:hover{
+      .Title-Section{
+        right: 55px !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transition: all ease-in-out 150ms !important;
       }
     }
   }

@@ -3,11 +3,13 @@ import "./ArchivePageStyle.scss";
 
 // Import Component
 import Filter from "./Filter/Filter";
-import CustomDualRange from "../All Item/CustomDualRange/CustomDualRange";
+import PaginatedItems from "../All Item/PaginatedItems/PaginatedItems";
+import SearchData from "../../Assets/jsone/Search.json";
 const ArchivePage = () => {
   return (
     <div className="Archive-Page-Background">
-      <Filter />
+        <Filter />
+        <PaginatedItems items={SearchData}/>
     </div>
   );
 };
