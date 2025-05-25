@@ -16,21 +16,27 @@ const GameDetails = () => {
     setSelectedImage(null);
   };
 
+  const handleBack = () => {
+    window.history.back(); // بازگشت به صفحه قبلی در تاریخچه مرورگر
+  };
+
   if (!game) {
     return (
       <div className="game-not-found">
         <h2>بازی یافت نشد</h2>
         <p>بازی با شناسه {id} وجود ندارد.</p>
-        <Link to="/">بازگشت به صفحه اصلی</Link>
+        <button onClick={handleBack} className="back-button">
+          بازگشت
+        </button>
       </div>
     );
   }
 
   return (
     <div className="game-details">
-      <Link to="/" className="back-button">
+      <button onClick={handleBack} className="back-button">
         بازگشت
-      </Link>
+      </button>
       <img src={game.Banner} alt={game.Title} className="game-banner" />
       <h2>{game.Title}</h2>
       <p>ژانر: {game.Genre}</p>
