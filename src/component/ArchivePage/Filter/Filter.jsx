@@ -12,6 +12,9 @@ import { ReactComponent as MetacriticIco } from '../../../Assets/Icon/Metacritic
 import CustomDualRange from '../../All Item/CustomDualRange/CustomDualRange';
 import CustomSelectBox from '../../All Item/CustomSelectBox/CustomSelectBox';
 
+// Import Json
+import Genres from '../../../Assets/jsone/Genre.json';
+
 const Filter = ({ setYear, setGenres, setMetaPoint }) => {
     const [isFilterOpen, setIsFilterOpen] = useState(false);
     const [activeSection, setActiveSection] = useState(null);
@@ -138,7 +141,7 @@ const Filter = ({ setYear, setGenres, setMetaPoint }) => {
                     >
                         <CustomSelectBox
                             Placeholder="ژانر"
-                            Value={['Action', 'RPG', 'FPP']}
+                            Value={Genres}
                             Multiple={true}
                             onChange={handleChangeGenre}
                         />

@@ -2,7 +2,7 @@
   {
     "id": 0,
     "Title": "The Legend of Zelda: Breath of the Wild",
-    "Genre": "Action-Adventure",
+    "Genre": "Action Adventure",
     "Poster": "https://m.media-amazon.com/images/I/61Cr-6BDTML._AC_UF894,1000_QL80_.jpg",
     "Banner": "https://cdn2.steamgriddb.com/grid/c0858d31da09dfc8bfef689f7f033d74.png",
     "Gallery": [
@@ -32,7 +32,7 @@
   {
     "id": 2,
     "Title": "God of War (2018)",
-    "Genre": "Action-Adventure",
+    "Genre": "Action Adventure",
     "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj2Ze84O5j8mHivDUBXYrrRNo844YKcja0vg&s",
     "Banner": "https://www.posterposse.com/wp-content/uploads/2018/06/God-Of-War-banner.jpeg",
     "Gallery": [
@@ -43,5 +43,95 @@
     "SaveGame": false,
     "Year": 2018,
     "MetaScore": 94
+  },
+  {
+    "id": 3,
+    "Title": "The Witcher",
+    "Genre": "Action RPG",
+    "Poster": "https://cdn2.steamgriddb.com/grid/04215c1ad3aaff3ed175446d2ea3c0f2.png",
+    "Banner": "https://cdn.mos.cms.futurecdn.net/WYbmYGAoA6RVPa9VHjRcVj.jpg",
+    "Gallery": [
+      "https://static1.thegamerimages.com/wordpress/wp-content/uploads/2021/10/the-witcher-1-geralt.jpg?q=70&fit=contain&w=1200&h=628&dpr=1",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOJ_VOhY6z0QGc2oxc3_D99795yVErGGTXVw&s",
+      "https://static1.thegamerimages.com/wordpress/wp-content/uploads/2021/10/witcher-1.jpg"
+    ],
+    "SaveGame": false,
+    "Year": 2007,
+    "MetaScore": 81
+  },
+  {
+    "id": 4,
+    "Title": "The Witcher 2",
+    "Genre": "Action RPG",
+    "Poster": "https://products.eneba.games/resized-products/ugtpscu5ezak7i9t5r0x_350x200_1x-0.jpg",
+    "Banner": "https://images.gog-statics.com/8355e657a19311b158a3553a154e109199d6991c7791a20c3305af1f84d15ed7.jpg",
+    "Gallery": [
+      "https://i.redd.it/6vy40j7xgvud1.jpeg",
+      "https://whatsgood.co.za/wp-content/uploads/2015/05/WitcherGameplay-932x524.jpg",
+      "https://i.ytimg.com/vi/TZ_G6XiHoUA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAJTVdUB0woThOdnsKuqVBOiIk0IQ"
+    ],
+    "SaveGame": false,
+    "Year": 2012,
+    "MetaScore": 88
+  },
+  {
+    "id": 5,
+    "Title": "The Witcher 3",
+    "Genre": "Action RPG",
+    "Poster": "https://i.ebayimg.com/00/s/MTYwMFgxMDY3/z/MCIAAOSwbP1aetq6/$_57.JPG?set_id=8800005007",
+    "Banner": "https://external-preview.redd.it/9th-birthday-to-the-witcher-3-wild-hunt-v0-Eu5PcUQ_2Ykh3vhU74PwWSXuYCFbFM50YaphW5BqRCY.jpg?width=640&crop=smart&auto=webp&s=6ae0e1763ce786ab519a01259e167dd59e83643f",
+    "Gallery": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Ri6jiTCYtdAL6NWplA4hKEx1DgAH8gWCsA&s",
+      "https://assets.vg247.com/current//2015/01/The_Witcher_3_Wild_Hunt_Halberds_really_now-Copy.png",
+      "https://shopretrograde.com/cdn/shop/files/The-Witcher-3-8K.jpg?v=1713318897&width=3840"
+    ],
+    "SaveGame": false,
+    "Year": 2015,
+    "MetaScore": 92
+  },
+  {
+    "id": 6,
+    "Title": "Red Dead Redemption",
+    "Genre": "Open-World Action",
+    "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs_N750Us3neFt-a56NlWm8WjzUw7rH8yaLg&s",
+    "Banner": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbk863CRyLNOuWlNzRB4KnMULnSzHMnBhtgw&s",
+    "Gallery": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBDU9HvM42wIMQ79wny6AUi5FqFCXIVgbgvg&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWdb6MNGZ5ZXt93TgCiQBFijbyisPps_rtNQ&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7zLkhFW2bVpNcUwfEg52wJtvqxIowoUSvoA&s"
+    ],
+    "SaveGame": false,
+    "Year": 2010,
+    "MetaScore": 95
+  },
+  {
+    "id": 7,
+    "Title": "Red Dead Redemption 2",
+    "Genre": "Open-World Action",
+    "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTluunbjUP6xpmrsF83jecG0QrAwQoC9UWJxQ&s",
+    "Banner": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtujf2tHr2RuT751WAyzJwVubXRvLOEQ2h8g&s",
+    "Gallery": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7ECs8Yc_ggI3h0thfvplSKHB5RVFCWpQFVA&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj6jk-9OoejxNWHRC5-5qJWgQDOomw3Z_lMA&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHsMcALKRyaVET9anbwAiB33fryUOxL4nNgA&s"
+    ],
+    "SaveGame": false,
+    "Year": 2010,
+    "MetaScore": 97
+  },
+  {
+    "id": 8,
+    "Title": "Dead Space",
+    "Genre": "Third-Person-Shoter",
+    "Poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSspCggMPGP0ysUVW4YWsi2wn-neB6w_clfXQ&s",
+    "Banner": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/17470/header.jpg?t=1664889864",
+    "Gallery": [
+      "https://i.ytimg.com/vi/3fSgaXryGgE/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGE8gZShEMA8=&rs=AOn4CLCB8YV3GQ_eQbnMnlJUBsGc5IAPJg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIHawYZ95TE_DrFUsUJX_wrFrGE5oKTDzsZg&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSINHCVxEsWlDXK74TuXsDeQMax16x_Wrr4WQ&s"
+    ],
+    "SaveGame": false,
+    "Year": 2008,
+    "MetaScore": 89
   }
 ]
