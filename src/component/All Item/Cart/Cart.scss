@@ -7,7 +7,7 @@
   transition: 0.5s all;
   .game-name {
     position: absolute;
-    top: 180px;
+    bottom: 0px;
     left: 10px;
     opacity: 1;
     user-select: none;
@@ -19,6 +19,7 @@
     object-fit: cover;
     transition: 0.5s all;
   }
+
   .game-info {
     width: 100%;
     height: 100%;
@@ -35,7 +36,7 @@
   }
   .game-info-More {
     width: 100%;
-    top: 80%;
+    bottom: 5%;
     right: 0;
     position: absolute;
     opacity: 0;

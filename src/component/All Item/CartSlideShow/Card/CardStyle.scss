@@ -14,7 +14,9 @@
     display: block;
     border-radius: 10px;
 
-    transition: filter ease-in-out 150ms, scale ease-in-out 150ms;
+    transition:
+      filter ease-in-out 150ms,
+      scale ease-in-out 150ms;
   }
   .Card-img::after {
     content: "";
@@ -28,7 +30,7 @@
 
     transition: background-color ease-in-out 150ms;
   }
-  .Card-Button{
+  .Card-Button {
     position: absolute;
     bottom: 20px;
     right: 25%;
@@ -45,7 +47,7 @@
     opacity: 0;
     transition: opacity ease-in-out 150ms;
 
-    span{
+    span {
       font-family: var(--IranSansWeb), serif;
       color: #ffffff;
     }
@@ -53,22 +55,24 @@
 }
 
 .Card-Background:hover {
-  .Card-img{
+  .Card-img {
     cursor: auto;
     filter: blur(5px);
     scale: 1.2;
   }
-  .Card-Button{
+  .Card-Button {
     cursor: pointer;
     visibility: visible;
     opacity: 1;
-    transition: opacity ease-in-out 150ms, background-color ease-in-out 150ms;
+    transition:
+      opacity ease-in-out 1s,
+      background-color ease-in-out 1s;
   }
-  .Card-Button:hover{
+  .Card-Button:hover {
     background-color: #3e3e5e;
     transition: background-color ease-in-out 150ms;
   }
-  .Card-Button:active{
+  .Card-Button:active {
     scale: 0.9;
   }
 }
@@ -76,5 +80,3 @@
 .Card-Background:hover .Card-img::after {
   background-color: rgba(0, 0, 0, 0.5);
 }
-
-
