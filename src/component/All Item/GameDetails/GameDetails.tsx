@@ -1,13 +1,14 @@
-import React, { useState } from "react";
-import { useParams, Link } from "react-router-dom";
-import gamesData from "../../../Assets/jsone/Search.json";
-import "./GameDetails.scss";
+import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
+import gamesData from '../../../Assets/jsone/Search.json';
+import './GameDetails.scss';
 
 const GameDetails = () => {
-  const { id } = useParams<{ id: string }>(); // مشخص کردن نوع id به‌عنوان string
-  const game = gamesData.find((game) => game.id === parseInt(id || "0")); // مدیریت id undefined
+  const { id } = useParams<{ id: string }>();
+  const game = gamesData.find((game) => game.id === parseInt(id || '0'));
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
+  // اصلاح نوع پارامتر image به string
   const openLightbox = (image: string) => {
     setSelectedImage(image);
   };
@@ -17,7 +18,7 @@ const GameDetails = () => {
   };
 
   const handleBack = () => {
-    window.history.back(); // بازگشت به صفحه قبلی در تاریخچه مرورگر
+    window.history.back();
   };
 
   if (!game) {

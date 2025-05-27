@@ -3,6 +3,7 @@ import "./AppStyle.scss";
 import { Navigate, Route, Routes } from "react-router-dom";
 // Import Component
 import Navigation from "../component/navigation/Navigatin";
+import Breadcrumb from "../component/All Item/Breadcrumb/Breadcrumb";
 
 const HomePageLazy = React.lazy(() => import("../component/HomePage/HomePage"));
 const ArchivePageLazy = React.lazy(
@@ -40,6 +41,7 @@ const App = () => {
         }`}
       >
         <React.Suspense fallback={<LoadingPageLazy />}>
+          <Breadcrumb />
           <Routes>
             <Route path="/" element={<HomePageLazy />} />
             <Route path="/Home" element={<Navigate to="/" />} />
