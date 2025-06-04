@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgaming_news_website_school_project=self.webpackChunkgaming_news_website_school_project||[]).push([[1],[,(e,s,a)=>{a.r(s),a.d(s,{default:()=>d});a(483);var c=a(723);const d=()=>(0,c.jsx)("div",{className:"Loading-Page-Background",children:(0,c.jsxs)("div",{className:"Loading-Page",children:[(0,c.jsx)("div",{className:"Loader"}),(0,c.jsx)("div",{className:"Loader-Text",children:(0,c.jsx)("span",{children:"\u062f\u0631 \u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc"})})]})})}]]);
+//# sourceMappingURL=1.e5d2d1c0.chunk.js.map
