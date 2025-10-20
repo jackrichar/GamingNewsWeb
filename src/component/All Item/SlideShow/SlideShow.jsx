@@ -39,9 +39,6 @@ export default function Slideshow() {
               backgroundImage: `url(${slide.Banner})`,
             }}
           >
-            <div className="Rating">
-              <span>{slide.Rating}</span>
-            </div>
             <h2 className="SlideTitle">{slide.Title}</h2>
           </div>
         </SwiperSlide>
